@@ -54,7 +54,7 @@ button {
 }
 
 .logo-title {
-    color: var(--color-primary, #f1cdb3);
+    color: var(--color-primary);
     font-family: Georgia;
     font-size: 32px;
     font-style: normal;
@@ -65,7 +65,7 @@ button {
 }
 
 .logo-subtitle {
-    color: var(--color-light-xl, #ffffff);
+    color: var(--color-light-xl);
     font-family: Arial;
     font-size: 13px;
     font-style: normal;
@@ -85,7 +85,7 @@ button {
 }
 
 .menu-link {
-    color: var(--color-dark-s, #cdcdcd);
+    color: var(--color-dark-s);
     font-family: Arial;
     font-size: 15px;
     font-style: normal;
@@ -96,7 +96,7 @@ button {
 }
 
 .menu-link:hover {
-    color: var(--color-light-s, #f6f6f6);
+    color: var(--color-light-s);
 }
 
 .active-link {
@@ -126,7 +126,7 @@ button {
 }
 
 .not-only-heading {
-    color: var(--color-light-xl, #FFF);
+    color: var(--color-light-xl);
     font-family: Georgia;
     font-size: 44px;
     font-style: normal;
@@ -136,7 +136,7 @@ button {
 }
 
 .not-only-subheading {
-    color: var(--color-dark-s, #CDCDCD);
+    color: var(--color-dark-s);
     font-family: Arial;
     font-size: 15px;
     font-style: normal;
@@ -148,8 +148,8 @@ button {
 .not-only-button {
     padding: 15px 45px;
     border-radius: 100px;
-    background: var(--color-primary, #F1CDB3);
-    color: var(--color-dark-3xl, #292929);
+    background: var(--color-primary);
+    color: var(--color-dark-3xl);
     font-family: Georgia;
     font-size: 17px;
     font-style: normal;
@@ -160,13 +160,13 @@ button {
 }
 
 .not-only-button:hover {
-    background: var(--color-primary-light, #FDDCC4);
+    background: var(--color-primary-light);
 }
 
 /* About */
 
 .about-background {
-    background: var(--color-light-xl, #FFF);
+    background: var(--color-light-xl);
 }
 
 .about {
@@ -183,7 +183,7 @@ button {
 }
 
 .about-heading {
-    color: var(--color-dark-l, #545454);
+    color: var(--color-dark-l);
     font-family: Georgia;
     font-size: 35px;
     font-style: normal;
@@ -194,7 +194,7 @@ button {
 }
 
 .about-subheading {
-    color: var(--color-dark-xl, #4C4C4C);
+    color: var(--color-dark-xl);
     font-family: Arial;
     font-size: 15px;
     font-style: normal;

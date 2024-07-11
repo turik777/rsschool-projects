@@ -496,7 +496,7 @@ button {
 .phone,
 .address-1,
 .address-2 {
-    color: var(--color-primary, #F1CDB3);
+    color: var(--color-primary);
     font-family: Georgia;
     font-size: 20px;
     font-style: normal;

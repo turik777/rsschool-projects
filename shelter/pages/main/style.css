@@ -305,6 +305,7 @@ button {
 }
 
 .pets-button {
+    cursor: pointer;
     padding: 15px 45px;
     border-radius: 100px;
     background: var(--color-primary);

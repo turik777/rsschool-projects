@@ -22,10 +22,6 @@
     --third-family: "Inter", sans-serif;
 }
 
-body {
-    height: 5000px;
-}
-
 /* Global */
 
 .wrapper {
@@ -35,6 +31,7 @@ body {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 button {
@@ -383,7 +380,7 @@ button {
 }
 
 .donation {
-    padding: 80px 182px 98px;
+    padding: 80px 182px 101px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -443,4 +440,67 @@ button {
     font-style: italic;
     font-weight: 400;
     line-height: 18px;
+}
+
+/* Footer */
+
+.footer-background {
+    background: url("/assets/images/noise_transparent@2x.png"), radial-gradient(549.89% 73.65% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%);
+}
+
+.footer {
+    padding: 40px 40px 0;
+    display: flex;
+    gap: 150px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    margin-top: 16px;
+}
+
+.footer-locations {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    padding-right: 15px;
+    gap: 33px;
+}
+
+.contacts-email,
+.contacts-phone,
+.location-address {
+    display: flex;
+    gap: 20px;
+}
+
+.contacts-title,
+.location-title {
+    color: var(--color-light-xl);
+    font-family: Georgia;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.email,
+.phone,
+.address-1,
+.address-2 {
+    color: var(--color-primary, #F1CDB3);
+    font-family: Georgia;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+.phone,
+.address-2 {
+    padding-top: 5px;
 }

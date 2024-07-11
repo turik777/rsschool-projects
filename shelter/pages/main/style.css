@@ -293,7 +293,7 @@ button {
     border-radius: 100px;
     border: 2px solid var(--color-primary);
     background-color: var(--color-light-s);
-    color: var(--color-dark-3xl, #292929);
+    color: var(--color-dark-3xl);
     font-family: Georgia;
     font-size: 17px;
     font-style: normal;
@@ -374,4 +374,73 @@ button {
     font-weight: 400;
     line-height: 115%;
     letter-spacing: 0.06em;
+}
+
+/* Donation */
+
+.donation-background {
+    background: var(--color-light-l);
+}
+
+.donation {
+    padding: 80px 182px 98px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 31px;
+}
+
+.donation-content {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.donation-heading {
+    color: var(--color-dark-l);
+    font-family: Georgia;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.donation-subheading {
+    color: var(--color-dark-l);
+    font-family: Georgia;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+.credit-card {
+    padding: 10px 15px;
+    border-radius: 9px;
+    background: var(--color-primary);
+    margin-right: 31px;
+    display: flex;
+    gap: 15px;
+}
+
+.card-number {
+    color: var(--color-dark-l);
+    font-family: Georgia;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    text-wrap: nowrap;
+}
+
+.donation-info {
+    color: var(--color-dark-m);
+    font-family: Arial;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 18px;
 }

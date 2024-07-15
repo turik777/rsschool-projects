@@ -258,6 +258,7 @@ button {
     font-weight: 400;
     line-height: 130%;
     letter-spacing: 0.06em;
+    width: 400px;
 }
 
 .pets-slider {
@@ -379,6 +380,7 @@ button {
     font-weight: 400;
     line-height: 130%;
     letter-spacing: 0.06em;
+    width: 308px;
 }
 
 .help-list {
@@ -438,6 +440,7 @@ button {
     font-weight: 400;
     line-height: 130%;
     letter-spacing: 0.06em;
+    width: 300px;
 }
 
 .donation-subheading {

@@ -279,7 +279,12 @@ button {
 .contacts-phone,
 .location-address {
     display: flex;
+    align-items: center;
     gap: 20px;
+}
+
+.contacts-phone {
+    margin-top: -3px;
 }
 
 .contacts-title,
@@ -306,7 +311,6 @@ button {
     letter-spacing: 0.06em;
 }
 
-.phone,
 .address-2 {
-    padding-top: 5px;
+    margin-top: -4px;
 }

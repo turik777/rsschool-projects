@@ -64,6 +64,10 @@ button {
 
 /* Header */
 
+.header-background {
+    background: var(--color-light-xl);
+}
+
 .header {
     width: 1280px;
     display: flex;
@@ -81,10 +85,11 @@ button {
     line-height: 110%;
     letter-spacing: 0.06em;
     margin-bottom: 10px;
+    transition: 0.5s;
 }
 
 .logo-subtitle {
-    color: var(--color-dark-xl);
+    color: var(--color-dark-3xl);
     font-family: Arial;
     font-size: 13px;
     font-style: normal;
@@ -93,6 +98,15 @@ button {
     letter-spacing: 0.1em;
     text-align: right;
     margin-right: 1px;
+    transition: 0.5s;
+}
+
+.header-logo:hover .logo-title {
+    color: var(--color-primary);
+}
+
+.header-logo:hover .logo-subtitle {
+    color: var(--color-dark-l);
 }
 
 .menu-nav {

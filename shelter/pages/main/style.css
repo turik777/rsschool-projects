@@ -63,8 +63,8 @@ html {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 button {
@@ -76,52 +76,58 @@ button {
 
 .header {
     position: absolute;
-    width: 1280px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 40px 0;
+    width: 1280px;
 }
 
 .logo-title {
-    color: var(--color-primary);
-    font-family: Georgia;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 110%;
-    letter-spacing: 0.06em;
     margin-bottom: 10px;
+
+    font-family: Georgia;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 110%;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
 }
 
 .logo-subtitle {
-    color: var(--color-light-xl);
-    font-family: Arial;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.1em;
-    text-align: right;
     margin-right: 1px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-size: 13px;
+    line-height: normal;
+    font-weight: 400;
+    text-align: right;
+    letter-spacing: 0.1em;
+    color: var(--color-light-xl);
 }
 
 .menu-nav {
-    list-style: none;
     display: flex;
     justify-content: space-between;
     gap: 35px;
     margin: 0 2px 4px 0;
+
+    list-style: none;
 }
 
 .menu-link {
-    color: var(--color-dark-s);
-    font-family: Arial;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
     padding-bottom: 4px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 160%;
+    font-weight: 400;
+    color: var(--color-dark-s);
+
     transition: 0.5s;
 }
 
@@ -130,10 +136,13 @@ button {
 }
 
 .active-link {
-    color: var(--color-light-s);
-    border-bottom: 3px solid var(--color-primary);
-    cursor: default;
     margin-bottom: 3px;
+
+    color: var(--color-light-s);
+
+    border-bottom: 3px solid var(--color-primary);
+
+    cursor: default;
 }
 
 /* Main */
@@ -147,48 +156,52 @@ button {
 .not-only {
     display: flex;
     justify-content: space-between;
-    padding: 180px 40px 0;
     gap: 42px;
+    padding: 180px 40px 0;
 }
 
 .not-only-content {
-    margin-top: 163px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 42px;
+    margin-top: 163px;
 }
 
 .not-only-heading {
-    color: var(--color-light-xl);
-    font-family: Georgia;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
     width: 310px;
+
+    font-family: Georgia;
+    font-style: normal;
+    font-size: 44px;
+    line-height: 130%;
+    font-weight: 400;
+    color: var(--color-light-xl);
 }
 
 .not-only-subheading {
-    color: var(--color-dark-s);
     font-family: Arial;
-    font-size: 15px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 15px;
     line-height: 160%;
+    font-weight: 400;
+    color: var(--color-dark-s);
 }
 
 .not-only-button {
     padding: 15px 45px;
-    border-radius: 100px;
-    background: var(--color-primary);
-    color: var(--color-dark-3xl);
+
     font-family: Georgia;
-    font-size: 17px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 17px;
     line-height: 130%;
+    font-weight: 400;
     letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+
+    background: var(--color-primary);
+    border-radius: 100px;
+
     transition: 0.5s;
 }
 
@@ -203,36 +216,37 @@ button {
 }
 
 .about {
-    padding: 80px 215px 100px;
     display: flex;
     gap: 120px;
+    padding: 80px 215px 100px;
 }
 
 .about-content {
-    padding: 14px 0;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    padding: 14px 0;
 }
 
 .about-heading {
-    color: var(--color-dark-l);
-    font-family: Georgia;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.06em;
     width: 370px;
+
+    font-family: Georgia;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 130%;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
 }
 
 .about-subheading {
-    color: var(--color-dark-xl);
     font-family: Arial;
-    font-size: 15px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 15px;
     line-height: 160%;
+    font-weight: 400;
+    color: var(--color-dark-xl);
 }
 
 /* Pets */
@@ -242,23 +256,24 @@ button {
 }
 
 .pets {
-    padding: 78px 40px 101px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
+    padding: 78px 40px 101px;
 }
 
 .pets-heading {
-    color: var(--color-dark-l);
-    text-align: center;
-    font-family: Georgia;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.06em;
     width: 400px;
+
+    font-family: Georgia;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 130%;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
 }
 
 .pets-slider {
@@ -269,13 +284,15 @@ button {
 }
 
 .button-arrow {
-    padding-bottom: 3px;
-    margin-top: 1px;
     width: 52px;
     height: 52px;
-    border-radius: 100px;
-    border: 2px solid var(--color-primary);
+    padding-bottom: 3px;
+    margin-top: 1px;
+
     background-color: var(--color-light-l);
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+
     transition: 0.5s;
 }
 
@@ -296,15 +313,18 @@ button {
     align-items: center;
     gap: 30px;
     padding-bottom: 30px;
-    border-radius: 9px;
+
     background: var(--color-light-s);
+    border-radius: 9px;
+
     transition: 0.5s;
 }
 
 .pets-card:hover {
-    cursor: pointer;
     background: var(--color-light-xl);
     box-shadow: 0px 2px 35px 14px #0d0d0d0a;
+
+    cursor: pointer;
 }
 
 .pets-card:hover > .pets-card-button {
@@ -313,44 +333,50 @@ button {
 }
 
 .pets-card-title {
-    color: var(--color-dark-l);
-    text-align: center;
     font-family: Georgia;
-    font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 20px;
     line-height: normal;
+    font-weight: 400;
+    text-align: center;
     letter-spacing: 0.06em;
+    color: var(--color-dark-l);
 }
 
 .pets-card-button {
     padding: 13px 43px;
-    border-radius: 100px;
-    border: 2px solid var(--color-primary);
-    background-color: var(--color-light-s);
-    color: var(--color-dark-3xl);
+
     font-family: Georgia;
-    font-size: 17px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 17px;
     line-height: 130%;
+    font-weight: 400;
     letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+
+    background-color: var(--color-light-s);
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+
     transition: 0.5s;
 }
 
 .pets-button {
-    cursor: pointer;
     padding: 15px 45px;
-    border-radius: 100px;
-    background: var(--color-primary);
-    color: var(--color-dark-3xl);
+
     font-family: Georgia;
-    font-size: 17px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 17px;
     line-height: 130%;
+    font-weight: 400;
     letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+    
+    background: var(--color-primary);
+    border-radius: 100px;
+
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .pets-button:hover {
@@ -364,30 +390,31 @@ button {
 }
 
 .help {
-    padding: 80px 115px 100px;
-    margin-left: 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
+    margin-left: 1px;
+    padding: 80px 115px 100px;
 }
 
 .help-heading {
-    color: var(--color-dark-l);
-    text-align: center;
-    font-family: Georgia;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.06em;
     width: 308px;
+
+    font-family: Georgia;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 130%;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: var(--color-dark-l);
 }
 
 .help-list {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 55px 120px;
 }
 
@@ -404,13 +431,13 @@ button {
 }
 
 .help-item-title {
-    color: var(--color-dark-l);
     font-family: Georgia;
-    font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 20px;
     line-height: 115%;
+    font-weight: 400;
     letter-spacing: 0.06em;
+    color: var(--color-dark-l);
 }
 
 /* Donation */
@@ -421,6 +448,7 @@ button {
 
 .donation {
     padding: 80px 182px 101px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -434,33 +462,37 @@ button {
 }
 
 .donation-heading {
-    color: var(--color-dark-l);
-    font-family: Georgia;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.06em;
     width: 300px;
+
+    font-family: Georgia;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 130%;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
 }
 
 .donation-subheading {
-    color: var(--color-dark-l);
     font-family: Georgia;
-    font-size: 15px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 15px;
     line-height: 110%;
+    font-weight: 400;
     letter-spacing: 0.06em;
+    color: var(--color-dark-l);
 }
 
 .credit-card {
     padding: 10px 15px;
-    border-radius: 9px;
-    background: var(--color-primary);
-    margin-right: 31px;
+    
     display: flex;
     gap: 15px;
+    margin-right: 31px;
+
+    background: var(--color-primary);
+    border-radius: 9px;
+
     transition: 0.5s;
 }
 
@@ -469,23 +501,23 @@ button {
 }
 
 .card-number {
-    color: var(--color-dark-l);
     font-family: Georgia;
-    font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 20px;
     line-height: 115%;
+    font-weight: 400;
     letter-spacing: 0.06em;
     text-wrap: nowrap;
+    color: var(--color-dark-l);
 }
 
 .donation-info {
-    color: var(--color-dark-m);
     font-family: Arial;
-    font-size: 12px;
     font-style: italic;
-    font-weight: 400;
+    font-size: 12px;
     line-height: 18px;
+    font-weight: 400;
+    color: var(--color-dark-m);
 }
 
 /* Footer */
@@ -495,9 +527,9 @@ button {
 }
 
 .footer {
-    padding: 40px 40px 0;
     display: flex;
     gap: 150px;
+    padding: 40px 40px 0;
 }
 
 .footer-contacts {
@@ -510,9 +542,9 @@ button {
 .footer-locations {
     display: flex;
     flex-direction: column;
+    gap: 33px;
     margin-top: 16px;
     padding-right: 15px;
-    gap: 33px;
 }
 
 .contacts-email,
@@ -545,26 +577,27 @@ button {
 
 .contacts-title,
 .location-title {
-    color: var(--color-light-xl);
     font-family: Georgia;
-    font-size: 35px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 35px;
     line-height: 130%;
+    font-weight: 400;
     letter-spacing: 0.06em;
+    color: var(--color-light-xl);
 }
 
 .email,
 .phone,
 .address-1,
 .address-2 {
-    color: var(--color-primary);
     font-family: Georgia;
-    font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 20px;
     line-height: 115%;
+    font-weight: 400;
     letter-spacing: 0.06em;
+    color: var(--color-primary);
+    
     transition: 0.5s;
 }
 

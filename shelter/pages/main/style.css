@@ -94,6 +94,12 @@ button {
     font-weight: 400;
     letter-spacing: 0.06em;
     color: var(--color-primary);
+
+    transition: 0.5s;
+}
+
+.header-logo:hover .logo-title {
+    color: var(--color-light-xl);
 }
 
 .logo-subtitle {
@@ -597,7 +603,7 @@ button {
     font-weight: 400;
     letter-spacing: 0.06em;
     color: var(--color-primary);
-    
+
     transition: 0.5s;
 }
 

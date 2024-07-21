@@ -243,8 +243,8 @@ button {
 
 .about {
     display: flex;
-    gap: 120px;
-    padding: 80px 215px 100px;
+    gap: 14.2%;
+    padding: 6.2% 16.8%;
 }
 
 .about-content {
@@ -255,7 +255,7 @@ button {
 }
 
 .about-heading {
-    width: 370px;
+    max-width: 370px;
 
     font-family: Georgia;
     font-style: normal;
@@ -273,6 +273,11 @@ button {
     line-height: 160%;
     font-weight: 400;
     color: var(--color-dark-xl);
+}
+
+.about-image {
+    max-width: 300px;
+    height: 408px;
 }
 
 /* Pets */
@@ -637,6 +642,14 @@ button {
 
 /* Media Queries */
 
+@media (max-width: 1000px) {
+    .about {
+        padding-left: 40px;
+        padding-right: 40px;
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
 
     /* Header */
@@ -671,6 +684,19 @@ button {
         position: relative;
         left: 70px;
     }
+
+    /* About */
+
+    .about {
+        flex-direction: column-reverse;
+        gap: 80px;
+        padding: 66px 170px 100px;
+        align-items: center;
+    }
+
+    .about img {
+        margin-top: -15px;
+    }
 }
 
 @media (max-width: 750px) {
@@ -681,26 +707,36 @@ button {
     .header svg {
         display: block;
     }
-}
 
-@media (max-width: 650px) {
-    .not-only {
-        padding: 150px 70px 0;
+    .about {
+        padding: 66px 120px 100px;
     }
 
-    .not-only img {
-        position: relative;
-        left: 20px;
-    }
-
-    .not-only-content {
-        padding: 0 20px;
+    .about img {
+        height: auto;
     }
 }
 
 @media (max-width: 650px) {
     .not-only {
         padding: 150px 20px 0;
+    }
+
+    .not-only img {
+        position: relative;
+        left: 0;
+    }
+
+    .not-only-content {
+        padding: 0 20px;
+    }
+
+    .about {
+        padding: 40px 30px 40px;
+    }
+
+    .about img {
+        max-width: 100%;
     }
 }
 
@@ -737,8 +773,33 @@ button {
     }
 
     .not-only img {
-        position: relative;
+        margin-left: 17px;
         padding: 0 17.5px;
-        left: 19px;
+    }
+
+    .about {
+        padding: 42px 10px;
+        gap: 42px;
+    }
+
+    .about-content {
+        align-content: space-between;
+        padding: 0;
+    }
+
+    .about-heading {
+        font-size: 25px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .about-subheading {
+        padding: 0 15px;
+        text-align: justify;
+        margin-bottom: -4px;
+    }
+
+    .about-image {
+        padding: 18px 20px;
     }
 }

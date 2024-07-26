@@ -48,7 +48,7 @@ html {
 }
 
 .wrapper {
-    width: 1280px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -69,12 +69,14 @@ button {
 }
 
 .header {
-    width: 1280px;
+    position: absolute;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px;
+    padding: 30px 40px 0;
+    width: 100%;
+    max-width: 1280px;
 }
 
 .logo-title {
@@ -150,6 +152,10 @@ button {
     cursor: default;
 }
 
+.header svg {
+    display: none;
+}
+
 /* Main */
 
 /* Pets */
@@ -163,7 +169,7 @@ button {
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    padding: 80px 40px 101px;
+    padding: 200px 30px 101px;
 }
 
 .pets-heading {
@@ -181,7 +187,7 @@ button {
 
 .pets-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px 40px;
     flex-wrap: wrap;
 }
@@ -297,6 +303,11 @@ button {
     padding: 40px 40px 0;
 }
 
+.footer-image {
+    display: flex;
+    align-items: end;
+}
+
 .footer-contacts {
     display: flex;
     flex-direction: column;
@@ -372,4 +383,179 @@ button {
 
 .footer path {
     transition: 0.5s;
+}
+
+/* Media Queries */
+
+@media (max-width: 1259px) {
+    .pets-card:nth-last-of-type(1),
+    .pets-card:nth-last-of-type(2) {
+        display: none;
+    }
+}
+
+@media (max-width: 1250px) {
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px 30px 0;
+        gap: 20%;
+    }
+
+    .footer-contacts,
+    .footer-locations {
+        max-width: 310px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .footer {
+        margin-top: -5px;
+        padding: 15px 30px 0;
+        gap: 59px 29px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    .header {
+        padding: 30px 30px 0;
+    }
+
+    /* Main */
+
+    /* Pets */
+
+    .pets {
+        padding: 200px 30px 81px;
+        gap: 30px;
+    }
+
+    .pets-cards {
+        justify-content: center;
+    }
+
+    .pets-navigation {
+        margin-top: 12px;
+    }
+
+    /* Footer */
+
+    .footer-contacts {
+        margin-left: 9px;
+    }
+}
+
+@media (max-width: 750px) {
+    .menu {
+        display: none;
+    }
+
+    .header svg {
+        display: block;
+    }
+
+    .footer-contacts,
+    .footer-locations {
+        min-width: 370px;
+    }
+}
+
+@media (max-width: 639px) {
+    .pets-card:nth-last-of-type(3),
+    .pets-card:nth-last-of-type(4),
+    .pets-card:nth-last-of-type(5) {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .pets-heading {
+        max-width: 300px;
+        font-size: 25px;
+    }
+
+    .pets-navigation {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 425px) {
+    .footer-contacts,
+    .footer-locations {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* Header */
+
+    .header {
+        padding: 30px 20px 0;
+    }
+
+    /* Main */
+
+    /* Pets */
+
+    .pets {
+        padding: 162px 10px 49px;
+    }
+
+    .pets-heading {
+        margin-bottom: 11px;
+    }
+
+    /* Footer */
+
+    .footer {
+        padding: 30px 10px 0;
+        gap: 40px;
+    }
+
+    .footer-image {
+        max-width: 260px;
+    }
+
+    .footer img {
+        width: 100%;
+    }
+
+    .footer-contacts,
+    .footer-locations {
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-contacts {
+        align-items: center;
+    }
+
+    .footer-locations {
+        gap: 36px;
+    }
+
+    .contacts-title,
+    .location-title {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .location-title {
+        max-width: 270px;
+        padding-left: 30px;
+        margin-top: -4px;
+        margin-bottom: 4px;
+    }
+
+    .location-address:first-of-type {
+        margin-bottom: 3px;
+    }
+
+    .footer-image {
+        margin-top: -3px;
+    }
 }

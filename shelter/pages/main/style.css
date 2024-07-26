@@ -852,6 +852,26 @@ button {
     }
 }
 
+@media (max-width: 530px) {
+    .help-list {
+        gap: 30px;
+    }
+    
+    .help-item {
+        width: 130px;
+        gap: 20px;
+    }
+    
+    .help-item-title {
+        font-size: 15px;
+    }
+
+    .help-item img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
 @media (max-width: 450px) {
     .donation {
         padding: 42px 15px;
@@ -910,6 +930,11 @@ button {
         order: 0;
     }
 
+    .help {
+        padding: 42px 10px;
+        gap: 42px;
+    }
+
     .footer-contacts,
     .footer-locations {
         min-width: auto;
@@ -948,9 +973,8 @@ button {
         padding: 0;
     }
 
-    .not-only img {
-        margin-left: 17px;
-        padding: 0 17.5px;
+    .not-only-image {
+        padding-left: 35px;
     }
 
     /* About */
@@ -999,38 +1023,15 @@ button {
 
     /* Help */
 
-    .help {
-        padding: 42px 10px;
-        gap: 42px;
-    }
-
     .help-heading {
         font-size: 25px;
         width: 220px;
-    }
-
-    .help-list {
-        gap: 30px;
-    }
-
-    .help-item {
-        width: 130px;
-        gap: 20px;
     }
 
     .help-item:last-child {
         margin-right: auto;
         margin-top: -2px;
         margin-left: 4px;
-    }
-
-    .help-item-title {
-        font-size: 15px;
-    }
-
-    .help-item img {
-        width: 50px;
-        height: 50px;
     }
 
     /* Footer */

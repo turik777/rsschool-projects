@@ -277,6 +277,7 @@ button {
 }
 
 .about-image {
+    align-self: center;
     max-width: 300px;
     height: 408px;
 }
@@ -487,7 +488,17 @@ button {
     gap: 31px;
 }
 
+.donation-image {
+    max-width: 505px;
+    margin-top: 6px;
+}
+
+.donation img {
+    max-width: 100%;
+}
+
 .donation-content {
+    max-width: 380px;
     display: flex;
     flex-direction: column;
     gap: 19px;
@@ -660,6 +671,10 @@ button {
     .pets-card:nth-last-child(1) {
         display: none;
     }
+
+    .donation {
+        flex-direction: column-reverse;
+    }
 }
 
 @media (max-width: 1037px) {
@@ -739,6 +754,12 @@ button {
         gap: 12px;
     }
     
+    /* Donation */
+
+    .donation {
+        padding: 80px 132px 101px;
+        gap: 56px;
+    }
 }
 
 @media (max-width: 750px) {
@@ -783,6 +804,58 @@ button {
 
     .about img {
         max-width: 100%;
+    }
+
+    .credit-card {
+        min-width: 349px;
+    }
+}
+
+@media (max-width: 576px) {
+    .donation {
+        padding: 42px 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .donation {
+        padding: 42px 15px;
+        gap: 42px;
+    }
+
+    .donation-content {
+        align-items: center;
+    }
+
+    .donation-heading {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .donation-subheading {
+        letter-spacing: 0;
+        line-height: 160%;
+    }
+
+    .credit-card {
+        min-width: 281px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-number {
+        font-size: 15px;
+    }
+
+    .donation-info {
+        max-width: 280px;
+        text-align: justify;
+    }
+
+    .donation-image {
+        margin-top: 3px;
+        max-width: 260px;
     }
 }
 

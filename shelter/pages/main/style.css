@@ -183,7 +183,7 @@ button {
 }
 
 .not-only-heading {
-    max-width: 310px;
+    width: 310px;
 
     font-family: Georgia;
     font-style: normal;
@@ -256,7 +256,7 @@ button {
 }
 
 .about-heading {
-    max-width: 370px;
+    width: 305px;
 
     font-family: Georgia;
     font-style: normal;
@@ -297,7 +297,7 @@ button {
 }
 
 .pets-heading {
-    max-width: 400px;
+    width: 400px;
 
     font-family: Georgia;
     font-style: normal;
@@ -310,14 +310,16 @@ button {
 }
 
 .pets-slider {
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-self: normal;
     gap: 53px;
 }
 
 .button-arrow {
-    width: 52px;
+    min-width: 52px;
     height: 52px;
     padding-bottom: 3px;
     margin-top: 1px;
@@ -335,9 +337,9 @@ button {
 }
 
 .pets-cards {
+    width: 990px;
     display: flex;
     justify-content: space-between;
-    gap: 90px;
 }
 
 .pets-card {
@@ -593,7 +595,8 @@ button {
     flex-direction: column;
     gap: 33px;
     margin-top: 16px;
-    padding-right: 15px;
+    margin-left: 9px;
+    padding-right: 9px;
 }
 
 .contacts-email,
@@ -626,6 +629,7 @@ button {
 
 .contacts-title,
 .location-title {
+    width: 280px;
     font-family: Georgia;
     font-style: normal;
     font-size: 35px;
@@ -650,6 +654,10 @@ button {
     transition: 0.5s;
 }
 
+.address-1 {
+    width: 260px;
+}
+
 .address-2 {
     margin-top: -4px;
 }
@@ -660,33 +668,21 @@ button {
 
 /* Media Queries */
 
+@media (max-width: 1276px) {
+    .footer {
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+
 @media (max-width: 1250px) {
-    .pets {
-        padding: 78px 30px 101px;
-    }
-
-    .pets-slider {
-        max-width: 1000px;
-        gap: 30px;
-    }
-
-    .pets-cards {
-        gap: 40px;
-    }
-
-    .pets-card:nth-last-child(1) {
-        display: none;
-    }
-
     .donation {
         flex-direction: column-reverse;
     }
 
     .footer {
         flex-wrap: wrap;
-        justify-content: center;
         padding: 30px 30px 0;
-        gap: 20%;
     }
 
     .footer-contacts,
@@ -695,11 +691,22 @@ button {
     }
 }
 
-@media (max-width: 1037px) {
-    .help {
-        padding: 80px 65px 100px;
+@media (max-width: 1180px) {
+    .pets {
+        padding: 78px 30px 101px;
     }
 
+    .pets-slider {
+        max-width: 830px;
+        align-self: center;
+    }
+    
+    .pets-card:nth-last-child(1) {
+        display: none;
+    }
+}
+
+@media (max-width: 1050px) {
     .help-list {
         gap: 55px 60px;
     }
@@ -709,7 +716,7 @@ button {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1020px) {
     .about {
         padding-left: 40px;
         padding-right: 40px;
@@ -720,6 +727,27 @@ button {
         margin-top: -5px;
         padding: 15px 30px 0;
         gap: 59px 29px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 990px) {
+    .help {
+        padding: 80px 65px 100px;
+    }
+}
+
+@media (max-width: 890px) {
+    .pets-slider {
+        align-self: normal;
+    }
+}
+
+@media (max-width: 845px) {
+    .pets-slider {
+        max-width: 711px;
+        align-self: center;
+        gap: 13px;
     }
 }
 
@@ -771,12 +799,6 @@ button {
     .about img {
         margin-top: -15px;
     }
-
-    /* Pets */
-
-    .pets-slider {
-        gap: 12px;
-    }
     
     /* Donation */
 
@@ -787,12 +809,15 @@ button {
 
     /* Footer */
 
-    .footer-contacts {
-        margin-left: 9px;
+    .footer-contacts,
+    .footer-locations {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-right: 0;
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
     .menu {
         display: none;
     }
@@ -800,13 +825,26 @@ button {
     .header svg {
         display: block;
     }
+}
 
+@media (max-width: 760px) {
+    .help-list {
+        width: 400px;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 750px) {
     .about {
         padding: 66px 120px 100px;
     }
 
     .about img {
         height: auto;
+    }
+
+    .pets-slider {
+        max-width: 400px;
     }
 
     .pets-card:nth-last-child(2) {
@@ -854,6 +892,7 @@ button {
 
 @media (max-width: 530px) {
     .help-list {
+        width: 290px;
         gap: 30px;
     }
     
@@ -873,6 +912,71 @@ button {
 }
 
 @media (max-width: 450px) {
+    .not-only {
+        padding: 150px 0 0;
+        margin: 0 10px;
+    }
+
+    .not-only-heading {
+        width: 300px;
+        font-size: 25px;
+        letter-spacing: 0.06em;
+        text-align: center;
+        padding: 0 20px;
+        align-self: center;
+    }
+
+    .not-only-subheading {
+        text-align: center;
+    }
+
+    .not-only-content {
+        padding: 0;
+    }
+
+    .not-only-image {
+        padding-left: 35px;
+    }
+
+    .about-heading {
+        width: 300px;
+        align-self: center;
+        font-size: 25px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .about-subheading {
+        padding: 0 15px;
+        text-align: justify;
+        margin-bottom: -4px;
+    }
+
+    .pets-heading {
+        max-width: 300px;
+        font-size: 25px;
+    }
+
+    .pets-slider {
+        max-width: 270px;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 100px;
+    }
+
+    .button-arrow {
+        order: 1;
+    }
+
+    .pets-card {
+        order: 0;
+    }
+
+    .help-heading {
+        font-size: 25px;
+        width: 220px;
+    }
+
     .donation {
         padding: 42px 15px;
         gap: 42px;
@@ -912,129 +1016,6 @@ button {
         margin-top: 3px;
         max-width: 260px;
     }
-}
-
-@media (max-width: 425px) {
-    .pets-slider {
-        max-width: 270px;
-        flex-wrap: wrap;
-        justify-content: center;
-        column-gap: 100px;
-    }
-
-    .button-arrow {
-        order: 1;
-    }
-
-    .pets-card {
-        order: 0;
-    }
-
-    .help {
-        padding: 42px 10px;
-        gap: 42px;
-    }
-
-    .footer-contacts,
-    .footer-locations {
-        min-width: auto;
-    }
-}
-
-@media (max-width: 320px) {
-
-    /* Header */
-
-    .header {
-        padding: 30px 20px 0;
-    }
-
-    /* Main */
-
-    /* Not Only */
-
-    .not-only {
-        padding: 150px 0 0;
-        margin: 0 10px;
-    }
-
-    .not-only-heading {
-        font-size: 25px;
-        letter-spacing: 0.06em;
-        text-align: center;
-        padding: 0 20px;
-    }
-
-    .not-only-subheading {
-        text-align: center;
-    }
-
-    .not-only-content {
-        padding: 0;
-    }
-
-    .not-only-image {
-        padding-left: 35px;
-    }
-
-    /* About */
-
-    .about {
-        padding: 42px 10px;
-        margin-bottom: -51px;
-        gap: 42px;
-    }
-
-    .about-content {
-        align-content: space-between;
-        padding: 0;
-    }
-
-    .about-heading {
-        font-size: 25px;
-        text-align: center;
-        padding: 0 10px;
-    }
-
-    .about-subheading {
-        padding: 0 15px;
-        text-align: justify;
-        margin-bottom: -4px;
-    }
-
-    .about-image {
-        padding: 18px 20px;
-    }
-
-    /* Pets */
-
-    .pets {
-        padding: 42px 10px;
-        gap: 42px;
-    }
-
-    .pets-slider {
-        gap: 18px 80px;
-    }
-
-    .pets-heading {
-        font-size: 25px;
-    }
-
-    /* Help */
-
-    .help-heading {
-        font-size: 25px;
-        width: 220px;
-    }
-
-    .help-item:last-child {
-        margin-right: auto;
-        margin-top: -2px;
-        margin-left: 4px;
-    }
-
-    /* Footer */
 
     .footer {
         padding: 30px 10px 0;
@@ -1082,5 +1063,62 @@ button {
 
     .footer-image {
         margin-top: -3px;
+    }
+
+    .footer-contacts,
+    .footer-locations {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .help {
+        padding: 42px 10px;
+        gap: 42px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* Header */
+
+    .header {
+        padding: 30px 20px 0;
+    }
+
+    /* Main */
+
+    /* About */
+
+    .about {
+        padding: 42px 10px;
+        margin-bottom: -51px;
+        gap: 42px;
+    }
+
+    .about-content {
+        align-content: space-between;
+        padding: 0;
+    }
+
+    .about-image {
+        padding: 18px 20px;
+    }
+
+    /* Pets */
+
+    .pets {
+        padding: 42px 10px;
+        gap: 42px;
+    }
+
+    .pets-slider {
+        gap: 18px 80px;
+    }
+
+    /* Help */
+
+    .help-item:last-child {
+        margin-top: -2px;
     }
 }

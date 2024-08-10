@@ -320,7 +320,8 @@ button {
     flex-direction: column;
     gap: 33px;
     margin-top: 16px;
-    padding-right: 15px;
+    margin-left: 9px;
+    padding-right: 9px;
 }
 
 .contacts-email,
@@ -353,6 +354,8 @@ button {
 
 .contacts-title,
 .location-title {
+    width: 280px;
+
     font-family: Georgia;
     font-style: normal;
     font-size: 35px;
@@ -377,6 +380,10 @@ button {
     transition: 0.5s;
 }
 
+.address-1 {
+    width: 260px;
+}
+
 .address-2 {
     margin-top: -4px;
 }
@@ -387,7 +394,18 @@ button {
 
 /* Media Queries */
 
+@media (max-width: 1275px) {
+    .footer {
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+
 @media (max-width: 1259px) {
+    .pets-cards {
+        justify-content: space-evenly;
+    }
+
     .pets-card:nth-last-of-type(1),
     .pets-card:nth-last-of-type(2) {
         display: none;
@@ -397,9 +415,7 @@ button {
 @media (max-width: 1250px) {
     .footer {
         flex-wrap: wrap;
-        justify-content: center;
         padding: 30px 30px 0;
-        gap: 20%;
     }
 
     .footer-contacts,
@@ -408,11 +424,18 @@ button {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1020px) {
+    .about {
+        padding-left: 40px;
+        padding-right: 40px;
+        gap: 30px;
+    }
+
     .footer {
         margin-top: -5px;
         padding: 15px 30px 0;
         gap: 59px 29px;
+        justify-content: center;
     }
 }
 
@@ -443,12 +466,15 @@ button {
 
     /* Footer */
 
-    .footer-contacts {
-        margin-left: 9px;
+    .footer-contacts,
+    .footer-locations {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-right: 0;
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
     .menu {
         display: none;
     }
@@ -456,14 +482,20 @@ button {
     .header svg {
         display: block;
     }
+}
 
+@media (max-width: 750px) {
     .footer-contacts,
     .footer-locations {
         min-width: 370px;
     }
 }
 
-@media (max-width: 639px) {
+@media (max-width: 656px) {
+    .pets-cards {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
     .pets-card:nth-last-of-type(3),
     .pets-card:nth-last-of-type(4),
     .pets-card:nth-last-of-type(5) {
@@ -487,29 +519,6 @@ button {
     .footer-locations {
         min-width: auto;
     }
-}
-
-@media (max-width: 320px) {
-
-    /* Header */
-
-    .header {
-        padding: 30px 20px 0;
-    }
-
-    /* Main */
-
-    /* Pets */
-
-    .pets {
-        padding: 162px 10px 49px;
-    }
-
-    .pets-heading {
-        margin-bottom: 11px;
-    }
-
-    /* Footer */
 
     .footer {
         padding: 30px 10px 0;
@@ -557,5 +566,26 @@ button {
 
     .footer-image {
         margin-top: -3px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* Header */
+
+    .header {
+        padding: 30px 20px 0;
+    }
+
+    /* Main */
+
+    /* Pets */
+
+    .pets {
+        padding: 162px 10px 49px;
+    }
+
+    .pets-heading {
+        margin-bottom: 11px;
     }
 }

@@ -99,10 +99,6 @@ button {
     transition: 0.5s;
 }
 
-.header-logo:hover .logo-title {
-    color: var(--color-light-xl);
-}
-
 .logo-subtitle {
     margin-right: 1px;
 
@@ -136,10 +132,6 @@ button {
     color: var(--color-dark-s);
 
     transition: 0.5s;
-}
-
-.menu-link:hover {
-    color: var(--color-light-s);
 }
 
 .active-link {
@@ -229,10 +221,6 @@ button {
     border-radius: 100px;
 
     transition: 0.5s;
-}
-
-.not-only-button:hover {
-    background: var(--color-primary-light);
 }
 
 /* About */
@@ -331,11 +319,6 @@ button {
     transition: 0.5s;
 }
 
-.button-arrow:hover {
-    background: var(--color-primary-light);
-    border: 2px solid var(--color-primary-light);
-}
-
 .pets-cards {
     width: 990px;
     display: flex;
@@ -353,18 +336,6 @@ button {
     border-radius: 9px;
 
     transition: 0.5s;
-}
-
-.pets-card:hover {
-    background: var(--color-light-xl);
-    box-shadow: 0px 2px 35px 14px #0d0d0d0a;
-
-    cursor: pointer;
-}
-
-.pets-card:hover > .pets-card-button {
-    background: var(--color-primary-light);
-    border: 2px solid var(--color-primary-light);
 }
 
 .pets-card-title {
@@ -412,10 +383,6 @@ button {
 
     transition: 0.5s;
     cursor: pointer;
-}
-
-.pets-button:hover {
-    background: var(--color-primary-light);
 }
 
 /* Help */
@@ -541,10 +508,6 @@ button {
     transition: 0.5s;
 }
 
-.credit-card:hover {
-    background: var(--color-primary-light);
-}
-
 .card-number {
     font-family: Georgia;
     font-style: normal;
@@ -610,22 +573,6 @@ button {
 .contacts-phone {
     margin-top: -3px;
 }
-
-.contacts-email:hover .email,
-.contacts-phone:hover .phone,
-.location-address:hover .address-1,
-.location-address:hover .address-2{
-    color: var(--color-light-xl);
-    
-}
-
-.contacts-email:hover path,
-.contacts-phone:hover path,
-.location-address:hover path,
-.location-address:hover path {
-    fill: var(--color-light-xl);
-}
-
 
 .contacts-title,
 .location-title {
@@ -1120,5 +1067,58 @@ button {
 
     .help-item:last-child {
         margin-top: -2px;
+    }
+}
+
+@media (hover: hover) {
+    .header-logo:hover .logo-title {
+        color: var(--color-light-xl);
+    }
+
+    .menu-link:hover {
+        color: var(--color-light-s);
+    }
+
+    .not-only-button:hover {
+        background: var(--color-primary-light);
+    }
+
+    .button-arrow:hover {
+        background: var(--color-primary-light);
+        border: 2px solid var(--color-primary-light);
+    }
+
+    .pets-card:hover {
+        background: var(--color-light-xl);
+        box-shadow: 0px 2px 35px 14px #0d0d0d0a;
+    
+        cursor: pointer;
+    }
+    
+    .pets-card:hover > .pets-card-button {
+        background: var(--color-primary-light);
+        border: 2px solid var(--color-primary-light);
+    }
+
+    .pets-button:hover {
+        background: var(--color-primary-light);
+    }
+
+    .credit-card:hover {
+        background: var(--color-primary-light);
+    }
+
+    .contacts-email:hover .email,
+    .contacts-phone:hover .phone,
+    .location-address:hover .address-1,
+    .location-address:hover .address-2{
+        color: var(--color-light-xl);
+    }
+
+    .contacts-email:hover path,
+    .contacts-phone:hover path,
+    .location-address:hover path,
+    .location-address:hover path {
+        fill: var(--color-light-xl);
     }
 }

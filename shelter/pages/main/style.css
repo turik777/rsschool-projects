@@ -144,8 +144,38 @@ button {
     cursor: default;
 }
 
-.header svg {
+.burger-icon {
     display: none;
+    cursor: pointer;
+    height: 30px;
+    transition: 0.5s;
+}
+
+.burger-line {
+    display: block;
+    position: relative;
+    background-color: var(--color-primary);
+    width: 30px;
+    height: 2px;
+    top: 14px;
+}
+
+.burger-line::before,
+.burger-line::after {
+    content: " ";
+    position: relative;
+    display: block;
+    background-color: var(--color-primary);
+    width: 30px;
+    height: 2px;
+}
+
+.burger-line::before {
+    top: -10px;
+}
+
+.burger-line::after {
+    top: 8px;
 }
 
 /* Main */

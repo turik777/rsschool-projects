@@ -795,12 +795,47 @@ button {
 }
 
 @media (max-width: 767px) {
-    .menu {
-        display: none;
+    html {
+        overflow-x: hidden;
     }
 
-    .header svg {
+    .menu-background {
         display: block;
+        transition: 0.5s;
+    }
+
+    .menu {
+        display: flex;
+        position: fixed;
+        z-index: 2;
+        width: 320px;
+        height: 100vh;
+        top: 0;
+        right: -320px;
+        background-color: var(--color-dark-3xl);
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+    }
+
+    .menu-nav {
+        flex-direction: column;
+        margin: 0;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .menu-link {
+        font-size: 32px;
+    }
+
+    .active-link {
+        padding-bottom: 7px;
+    }
+
+    .burger-icon {
+        display: block;
+        z-index: 2;
     }
 }
 

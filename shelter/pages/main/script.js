@@ -8,7 +8,7 @@ function showMenu() {
         menuBackground.style.backgroundColor = "transparent";
         setTimeout(() => menuBackground.classList.remove("menu-background-active"), 500);
     } else {
-        menuBackground.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        menuBackground.style.backgroundColor = "rgba(41, 41, 41, 0.60)";
         menuBackground.classList.add("menu-background-active");
     }
 

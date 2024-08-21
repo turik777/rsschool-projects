@@ -28,6 +28,16 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Georgia';
+    src: url('../../assets/fonts/georgia/georgia-bold.woff2') format('woff2'),
+        url('../../assets/fonts/georgia/georgia-bold.woff') format('woff'),
+        url('../../assets/fonts/georgia/georgia-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;

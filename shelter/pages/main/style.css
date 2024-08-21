@@ -871,6 +871,28 @@ button {
         align-self: center;
         gap: 13px;
     }
+
+    .popup-window {
+        max-width: 630px;
+    }
+
+    .popup-image {
+        width: 350px;
+    }
+
+    .popup-content {
+        padding: 10px;
+    }
+
+    .popup-description {
+        max-width: 261px;
+        font-size: 13px;
+        padding: 20px 0;
+    }
+
+    .popup ul {
+        gap: 5px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1051,6 +1073,16 @@ button {
 
     .credit-card {
         min-width: 349px;
+    }
+}
+
+@media (max-width: 630px) {
+    .popup-image {
+        display: none;
+    }
+
+    .popup-close {
+        right: -30px;
     }
 }
 
@@ -1290,6 +1322,25 @@ button {
 
     .help-item:last-child {
         margin-top: -2px;
+    }
+
+    .popup {
+        padding-bottom: 8px;
+    }
+
+    .popup-window{
+        margin: 0 30px;
+        max-width: 240px;
+    }
+
+    .popup-title,
+    .popup-subtitle {
+        text-align: center;
+    }
+
+    .popup-description {
+        text-align: justify;
+        padding: 16px 0 23px 0;
     }
 }
 

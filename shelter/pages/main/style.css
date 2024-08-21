@@ -661,6 +661,133 @@ button {
     transition: 0.5s;
 }
 
+.overflow-hidden {
+    overflow-y: hidden;
+}
+
+.popup {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(41, 41, 41, 0.60);
+}
+
+.popup-window {
+    max-width: 900px;
+    position: relative;
+    display: flex;
+    border-radius: 9px;
+    background-color: var(--color-light-s);
+    margin: 0 60px;
+}
+
+.popup-image {
+    width: 500px;
+}
+
+.popup img {
+    width: 100%;
+    border-radius: 9px;
+}
+
+.popup-content {
+    padding: 50px 20px 50px 29px;
+}
+
+.popup-title {
+    color: #000000;
+    font-family: Georgia;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+}
+
+.popup-subtitle {
+    color: #000000;
+    font-family: Georgia;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+.popup-description {
+    max-width: 350px;
+    color: #000;
+    font-family: Georgia;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 114%;
+    letter-spacing: 0.06em;
+    padding: 40px 0;
+}
+
+.popup ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 15px;
+}
+
+.popup li::marker {
+    color: var(--color-primary)
+}
+
+.popup li {
+    color: #000000;
+    font-family: Georgia;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.popup-close {
+    position: absolute;
+    top: -52px;
+    right: -42px;
+    width: 52px;
+    height: 52px;
+    padding-bottom: 2px;
+
+    font-family: Georgia;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 115%;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: var(--color-dark-3xl);
+    
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    
+    transition: 0.5s;
+}
+
+.popup-close:hover {
+    cursor: pointer;
+    background: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+}
+
 /* Media Queries */
 
 @media (max-width: 1276px) {
@@ -815,10 +942,6 @@ button {
 @media (max-width: 767px) {
     html {
         overflow-x: hidden;
-    }
-
-    .overflow-hidden {
-        overflow-y: hidden;
     }
 
     .menu-background {

@@ -51,3 +51,34 @@ while (arrayPets.length < 6) {
     arrayPets.push(arrayRandom);
     last = [arrayRandom[6], arrayRandom[7]];
 }
+
+const pagination = document.querySelector(".pets-cards");
+function renderCard(pet) {
+    const card = document.createElement("div");
+    const cardImage = document.createElement("img");
+    const cardTitle = document.createElement("p");
+    const cardButton = document.createElement("button");
+
+    card.classList.add("pets-card");
+    cardImage.classList.add("pets-card-title");
+    cardTitle.classList.add("pets-card-title");
+    cardButton.classList.add("pets-card-button");
+
+    cardImage.src = pet.img;
+    cardImage.alt = pet.type + " " + pet.name;
+    cardTitle.textContent = pet.name;
+    cardButton.textContent = "Learn more";
+
+    pagination.appendChild(card);
+    card.appendChild(cardImage);
+    card.appendChild(cardTitle);
+    card.appendChild(cardButton);
+
+    card.addEventListener("click", () => {
+        showPopup(pet);
+    });
+}
+
+arrayPets[0].forEach(pet => {
+  renderCard(pets[pet]);
+});

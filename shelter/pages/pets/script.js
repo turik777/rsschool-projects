@@ -1,3 +1,5 @@
+import pets from "../../assets/data/pets.js"
+
 const burger = document.querySelector(".burger-icon");
 const menu = document.querySelector(".menu");
 const menuBackground = document.querySelector(".menu-background");

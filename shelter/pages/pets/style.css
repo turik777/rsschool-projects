@@ -534,11 +534,6 @@ button {
     .pets-cards {
         justify-content: space-evenly;
     }
-
-    .pets-card:nth-last-of-type(1),
-    .pets-card:nth-last-of-type(2) {
-        display: none;
-    }
 }
 
 @media (max-width: 1250px) {
@@ -696,11 +691,6 @@ button {
     .pets-cards {
         flex-direction: column;
         flex-wrap: nowrap;
-    }
-    .pets-card:nth-last-of-type(3),
-    .pets-card:nth-last-of-type(4),
-    .pets-card:nth-last-of-type(5) {
-        display: none;
     }
 }
 

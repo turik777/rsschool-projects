@@ -82,3 +82,96 @@ function renderCard(pet) {
 arrayPets[0].forEach(pet => {
   renderCard(pets[pet]);
 });
+
+const buttons = document.querySelectorAll(".button-arrow");
+let count = 0;
+
+buttons[2].textContent = count + 1;
+
+buttons[0].addEventListener("click", () => {
+    count = 0;
+    const cards = document.querySelector(".pets-cards");
+    cards.innerHTML = "";
+    buttons[2].textContent = count + 1;
+
+    arrayPets[count].forEach(pet => {
+        renderCard(pets[pet]);
+    });
+
+    buttonActive();
+});
+
+buttons[1].addEventListener("click", () => {
+    count--;
+    const cards = document.querySelector(".pets-cards");
+    cards.innerHTML = "";
+    
+    if (count < 0) count = 0;
+    buttons[2].textContent = count + 1;
+
+    arrayPets[count].forEach(pet => {
+        renderCard(pets[pet]);
+    });
+
+    buttonActive();
+});
+
+buttons[3].addEventListener("click", () => {
+    count++;
+    const cards = document.querySelector(".pets-cards");
+    cards.innerHTML = "";
+    
+    if (count > arrayPets.length - 1) count = arrayPets.length - 1; 
+    buttons[2].textContent = count + 1;
+
+    arrayPets[count].forEach(pet => {
+        renderCard(pets[pet]);
+    });
+
+    buttonActive();
+});
+
+buttons[4].addEventListener("click", () => {
+    count = arrayPets.length - 1;
+    const cards = document.querySelector(".pets-cards");
+    cards.innerHTML = "";
+    buttons[2].textContent = count + 1;
+
+    arrayPets[count].forEach(pet => {
+        renderCard(pets[pet]);
+    });
+
+    buttonActive();
+});
+
+function buttonActive() {
+    if (count === 0) {
+        buttons[0].classList.add("button-inactive");
+        buttons[1].classList.add("button-inactive");
+        buttons[0].classList.remove("button-normal");
+        buttons[1].classList.remove("button-normal");
+        buttons[3].classList.remove("button-inactive");
+        buttons[4].classList.remove("button-inactive");
+        buttons[3].classList.add("button-normal");
+        buttons[4].classList.add("button-normal");
+    } else if (count === arrayPets.length - 1) {
+        buttons[0].classList.remove("button-inactive");
+        buttons[1].classList.remove("button-inactive");
+        buttons[0].classList.add("button-normal");
+        buttons[1].classList.add("button-normal");
+        buttons[3].classList.add("button-inactive");
+        buttons[4].classList.add("button-inactive");
+        buttons[3].classList.remove("button-normal");
+        buttons[4].classList.remove("button-normal");
+    } else {
+        buttons[0].classList.remove("button-inactive");
+        buttons[1].classList.remove("button-inactive");
+        buttons[0].classList.add("button-normal");
+        buttons[1].classList.add("button-normal");
+        buttons[3].classList.remove("button-inactive");
+        buttons[4].classList.remove("button-inactive");
+        buttons[3].classList.add("button-normal");
+        buttons[4].classList.add("button-normal");
+    }
+}
+buttonActive();

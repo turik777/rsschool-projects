@@ -175,3 +175,41 @@ function buttonActive() {
     }
 }
 buttonActive();
+
+function splitArrayPets(size) {
+    let flat = arrayPets.flat();
+    arrayPets = [];
+    for (let i = 0; i < flat.length; i += size) {
+        let arrayRandom = flat.slice(i, i + size);
+        arrayPets.push(arrayRandom);
+    }
+};
+
+function rearrangeCards() {
+    const cards = document.querySelector(".pets-cards");
+    while (arrayPets[count] === undefined) {
+        count--;
+        buttons[2].textContent = count + 1;
+    }
+    buttonActive();
+
+    cards.innerHTML = "";
+    arrayPets[count].forEach(pet => {
+        renderCard(pets[pet]);
+    });
+}
+  
+["load", "resize"].forEach((event) => {
+    window.addEventListener(event, () => {
+        if (document.documentElement.clientWidth < 768  && arrayPets.length !== 16) {
+            splitArrayPets(3);
+            rearrangeCards();
+        } else if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280 && arrayPets.length !== 8) {
+            splitArrayPets(6);
+            rearrangeCards();
+        } else if (document.documentElement.clientWidth >= 1280 && arrayPets.length !== 6) {
+            splitArrayPets(8);
+            rearrangeCards();
+        }
+    });
+})

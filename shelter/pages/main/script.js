@@ -96,6 +96,44 @@ const slider = document.querySelector(".slider-cards");
 const cards = document.getElementsByClassName("pets-cards");
 const buttons = document.querySelectorAll(".button-arrow");
 
+let length = 0;
+["load", "resize"].forEach((event) => {
+    window.addEventListener(event, () => {
+        const cards1280 = document.querySelectorAll(".pets-cards .pets-card:last-child");
+        const cards768 = document.querySelectorAll(".pets-cards .pets-card:nth-child(2)");
+        if (document.documentElement.clientWidth < 768  && length !== 1) {
+            cards1280.forEach(card => card.style.display = "none");
+            cards768.forEach(card => card.style.display = "none");
+            length = 1;
+            transition();
+        } else if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280 && length !== 2) {
+            cards1280.forEach(card => card.style.display = "none");
+            cards768.forEach(card => {
+                if (card.style.display === "none") card.style.display = "flex";  
+            })
+            length = 2;
+            transition();
+        } else if (document.documentElement.clientWidth >= 1280 && length !== 3) {
+            cards1280.forEach(card => {
+                if (card.style.display === "none") card.style.display = "flex";
+            })
+            cards768.forEach(card => {
+                if (card.style.display === "none") card.style.display = "flex";
+            })
+            length = 3;
+            transition();
+        }
+    });
+})
+
+function transition() {
+    const cards = document.querySelectorAll(".pets-cards");
+    cards.forEach(card => {
+        card.style.transition = "none";
+        setTimeout(() => card.style.transition = "1s", 100);
+    })
+}
+
 let countL = 1;
 let countR = 1;
 buttons[1].addEventListener("click", () => {

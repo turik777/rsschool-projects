@@ -91,3 +91,78 @@ randomNextArr();
 arrayNextRandom.forEach(pet => {
     renderCard(pets[pet], 2);
 });
+
+const slider = document.querySelector(".slider-cards");
+const cards = document.getElementsByClassName("pets-cards");
+const buttons = document.querySelectorAll(".button-arrow");
+
+let countL = 1;
+let countR = 1;
+buttons[1].addEventListener("click", () => {
+    if (countL === 2 && countR === 1) [arrayNextRandom, arrayCurrRandom] = [arrayCurrRandom, arrayNextRandom];
+
+    countR++;
+    countL--;
+    if (countL < 1) countL = 1;
+
+    if (countR === 3) {
+        countR = 2;
+        arrayCurrRandom = arrayNextRandom;
+        randomNextArr();
+        cards[2].innerHTML = "";
+
+        arrayNextRandom.forEach(pet => {
+            renderCard(pets[pet], 2);
+        });
+
+        hideCards();
+    }
+    cards[0].remove();
+    slider.appendChild(cards[0].cloneNode(true));
+});
+
+buttons[0].addEventListener("click", () => {
+    if (countR === 2 && countL === 1) [arrayCurrRandom, arrayNextRandom] = [arrayNextRandom, arrayCurrRandom];
+
+    countL++;
+    countR--;
+    if (countR < 1) countR = 1;
+
+    if (countL === 3) {
+        countL = 2;
+        arrayCurrRandom = arrayNextRandom;
+        randomNextArr();
+        cards[0].innerHTML = "";
+
+        arrayNextRandom.forEach(pet => {
+            renderCard(pets[pet], 0);
+        });
+
+        hideCards();
+    }
+    const lastCard = cards[cards.length - 1];
+    lastCard.remove();
+    slider.insertBefore(lastCard.cloneNode(true), cards[0]);
+});
+
+function hideCards() {
+    const cards1280 = document.querySelectorAll(".pets-cards .pets-card:last-child");
+    const cards768 = document.querySelectorAll(".pets-cards .pets-card:nth-child(2)");
+    
+    if (document.documentElement.clientWidth < 768) {
+        cards1280.forEach(card => card.style.display = "none");
+        cards768.forEach(card => card.style.display = "none");
+    } else if ((document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280)) {
+        cards1280.forEach(card => card.style.display = "none");
+        cards768.forEach(card => {
+            if (card.style.display === "none") card.style.display = "flex";
+        })
+    } else if (document.documentElement.clientWidth >= 1280) {
+        cards1280.forEach(card => {
+            if (card.style.display === "none") card.style.display = "flex";
+        })
+        cards768.forEach(card => {
+            if (card.style.display === "none") card.style.display = "flex";
+        })
+    }
+}

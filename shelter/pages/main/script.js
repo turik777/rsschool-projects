@@ -232,16 +232,16 @@ function showPopup(pet) {
     const popupTitle = document.querySelector(".popup-title");
     const popupSubtitle = document.querySelector(".popup-subtitle");
     const popupDescription = document.querySelector(".popup-description");
-    const popupList = document.querySelectorAll(".popup-content li");
+    const popupInfo = document.querySelectorAll(".popup-info");
 
     popupImage.src = pet.img;
     popupTitle.textContent = pet.name;
     popupSubtitle.textContent = pet.type + " - " + pet.breed;
     popupDescription.textContent = pet.description;
-    popupList[0].innerHTML = `<li><span class="bold">Age:</span> ${pet.age}</li>`;
-    popupList[1].innerHTML = `<li><span class="bold">Inoculations:</span> ${pet.inoculations.join(", ")}</li>`;
-    popupList[2].innerHTML = `<li><span class="bold">Diseases:</span> ${pet.diseases.join(", ")}</li>`;
-    popupList[3].innerHTML = `<li><span class="bold">Parasites:</span> ${pet.parasites.join(", ")}</li>`;    
+    popupInfo[0].textContent = pet.age;
+    popupInfo[1].textContent = pet.inoculations.join(", ");
+    popupInfo[2].textContent = pet.diseases.join(", ");
+    popupInfo[3].textContent = pet.parasites.join(", ");
 }
 
 popup.addEventListener("click", (event) => {

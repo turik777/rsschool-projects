@@ -425,6 +425,8 @@ button {
 
 .popup img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 9px;
 }
 
@@ -466,6 +468,7 @@ button {
 }
 
 .popup ul {
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     gap: 12px;

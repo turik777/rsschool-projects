@@ -45,18 +45,24 @@ function randomArr() {
         }
     }  
 }
-randomArr();
-
-arrayPets.push(arrayRandom);
-let last = [arrayRandom[6], arrayRandom[7]];
 
 while (arrayPets.length < 6) {
     randomArr();
+    arrayPets.push(arrayRandom);
+    let last = [arrayRandom[6], arrayRandom[7]];
+
+    randomArr();
     while (arrayRandom.slice(0, 4).some(x => last.includes(x))) {
-        randomArr();
+        randomArr();        
     }
     arrayPets.push(arrayRandom);
-    last = [arrayRandom[6], arrayRandom[7]];
+    last = [arrayRandom[4], arrayRandom[5], arrayRandom[6], arrayRandom[7]];
+
+    randomArr();
+    while (arrayRandom.slice(0, 2).some(x => last.includes(x))) {
+        randomArr();        
+    }
+    arrayPets.push(arrayRandom);
 }
 
 const pagination = document.querySelector(".pets-cards");

@@ -213,3 +213,38 @@ function rearrangeCards() {
         }
     });
 })
+
+const popup = document.querySelector(".popup");
+const popupClose = document.querySelector(".popup-close");
+
+function showPopup(pet) {
+    popup.style.display = "flex";
+    document.querySelector("html").classList.add("overflow-hidden");
+
+    const popupImage = document.querySelector(".popup-image img");
+    const popupTitle = document.querySelector(".popup-title");
+    const popupSubtitle = document.querySelector(".popup-subtitle");
+    const popupDescription = document.querySelector(".popup-description");
+    const popupList = document.querySelectorAll(".popup-content li");
+
+    popupImage.src = pet.img;
+    popupTitle.textContent = pet.name;
+    popupSubtitle.textContent = pet.type + " - " + pet.breed;
+    popupDescription.textContent = pet.description;
+    popupList[0].innerHTML = `<li><span class="bold">Age:</span> ${pet.age}</li>`;
+    popupList[1].innerHTML = `<li><span class="bold">Inoculations:</span> ${pet.inoculations.join(", ")}</li>`;
+    popupList[2].innerHTML = `<li><span class="bold">Diseases:</span> ${pet.diseases.join(", ")}</li>`;
+    popupList[3].innerHTML = `<li><span class="bold">Parasites:</span> ${pet.parasites.join(", ")}</li>`;    
+}
+
+popup.addEventListener("click", (event) => {
+    if (event.target === popup) {
+        popup.style.display = "none";
+        document.querySelector("html").classList.remove("overflow-hidden");
+    }
+});
+
+popupClose.addEventListener("click", () => {
+    popup.style.display = "none";
+    document.querySelector("html").classList.remove("overflow-hidden");
+});

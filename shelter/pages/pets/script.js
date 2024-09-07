@@ -214,13 +214,13 @@ function rearrangeCards() {
   
 ["load", "resize"].forEach((event) => {
     window.addEventListener(event, () => {
-        if (document.documentElement.clientWidth < 768  && arrayPets.length !== 16) {
+        if (document.documentElement.clientWidth < 657  && arrayPets.length !== 16) {
             splitArrayPets(3);
             rearrangeCards();
-        } else if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280 && arrayPets.length !== 8) {
+        } else if (document.documentElement.clientWidth >= 657 && document.documentElement.clientWidth < 1260 && arrayPets.length !== 8) {
             splitArrayPets(6);
             rearrangeCards();
-        } else if (document.documentElement.clientWidth >= 1280 && arrayPets.length !== 6) {
+        } else if (document.documentElement.clientWidth >= 1260 && arrayPets.length !== 6) {
             splitArrayPets(8);
             rearrangeCards();
         }

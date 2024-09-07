@@ -1,11 +1,16 @@
 import pets from "../../assets/data/pets.js"
 
+let cooldown = false;
+
 const burger = document.querySelector(".burger-icon");
 const menu = document.querySelector(".menu");
 const menuBackground = document.querySelector(".menu-background");
 const menuLinks = document.querySelectorAll(".menu-link");
 
 function showMenu() {
+    if (cooldown) return;
+    cooldown = true;
+
     if (menu.classList.contains("menu-active")) {
         menuBackground.style.backgroundColor = "transparent";
         setTimeout(() => menuBackground.classList.remove("menu-background-active"), 500);
@@ -17,6 +22,8 @@ function showMenu() {
     burger.classList.toggle("burger-icon-active");
     menu.classList.toggle("menu-active");
     document.querySelector("html").classList.toggle("overflow-hidden");
+
+    setTimeout(() => cooldown = false, 500);
 }
 
 burger.addEventListener("click", showMenu);

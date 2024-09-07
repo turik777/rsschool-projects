@@ -1,11 +1,16 @@
 import pets from "../../assets/data/pets.js"
 
+let cooldown = false;
+
 const burger = document.querySelector(".burger-icon");
 const menu = document.querySelector(".menu");
 const menuBackground = document.querySelector(".menu-background");
 const menuLinks = document.querySelectorAll(".menu-link");
 
 function showMenu() {
+    if (cooldown) return;
+    cooldown = true;
+
     if (menu.classList.contains("menu-active")) {
         menuBackground.style.backgroundColor = "transparent";
         setTimeout(() => menuBackground.classList.remove("menu-background-active"), 500);
@@ -17,6 +22,8 @@ function showMenu() {
     burger.classList.toggle("burger-icon-active");
     menu.classList.toggle("menu-active");
     document.querySelector("html").classList.toggle("overflow-hidden");
+
+    setTimeout(() => cooldown = false, 500);
 }
 
 burger.addEventListener("click", showMenu);
@@ -137,6 +144,9 @@ function transition() {
 let countL = 1;
 let countR = 1;
 buttons[1].addEventListener("click", () => {
+    if (cooldown) return;
+    cooldown = true;
+
     if (countL === 2 && countR === 1) [arrayNextRandom, arrayCurrRandom] = [arrayCurrRandom, arrayNextRandom];
 
     countR++;
@@ -157,9 +167,13 @@ buttons[1].addEventListener("click", () => {
     }
     cards[0].remove();
     slider.appendChild(cards[0].cloneNode(true));
+
+    setTimeout(() => cooldown = false, 850);
 });
 
 buttons[0].addEventListener("click", () => {
+    if (cooldown) return;
+    cooldown = true;
     if (countR === 2 && countL === 1) [arrayCurrRandom, arrayNextRandom] = [arrayNextRandom, arrayCurrRandom];
 
     countL++;
@@ -181,6 +195,8 @@ buttons[0].addEventListener("click", () => {
     const lastCard = cards[cards.length - 1];
     lastCard.remove();
     slider.insertBefore(lastCard.cloneNode(true), cards[0]);
+
+    setTimeout(() => cooldown = false, 850);
 });
 
 function hideCards() {

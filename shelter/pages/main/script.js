@@ -203,15 +203,15 @@ function hideCards() {
     const cards1280 = document.querySelectorAll(".pets-cards .pets-card:last-child");
     const cards768 = document.querySelectorAll(".pets-cards .pets-card:nth-child(2)");
     
-    if (document.documentElement.clientWidth < 768) {
+    if (window.innerWidth < 768) {
         cards1280.forEach(card => card.style.display = "none");
         cards768.forEach(card => card.style.display = "none");
-    } else if ((document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280)) {
+    } else if ((window.innerWidth >= 768 && window.innerWidth < 1280)) {
         cards1280.forEach(card => card.style.display = "none");
         cards768.forEach(card => {
             if (card.style.display === "none") card.style.display = "flex";
         })
-    } else if (document.documentElement.clientWidth >= 1280) {
+    } else if (window.innerWidth >= 1280) {
         cards1280.forEach(card => {
             if (card.style.display === "none") card.style.display = "flex";
         })

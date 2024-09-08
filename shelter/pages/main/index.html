@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon/favicon-16x16.png">
     <link rel="manifest" href="../../assets/icons/favicon/site.webmanifest">
+    <script src="script.js" type="module"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -26,11 +27,10 @@
                     <li><a class="menu-link" href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22" fill="none">
-                <line y1="21" x2="30" y2="21" stroke="#F1CDB3" stroke-width="2"/>
-                <line y1="11" x2="30" y2="11" stroke="#F1CDB3" stroke-width="2"/>
-                <line y1="1" x2="30" y2="1" stroke="#F1CDB3" stroke-width="2"/>
-            </svg>
+            <div class="menu-background"></div>
+            <div class="burger-icon">
+                <span class="burger-line"></span>
+            </div>
         </header>
     </div>
 
@@ -75,22 +75,10 @@
                                 <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929"/>
                             </svg>
                         </button>
-                        <div class="pets-cards">
-                            <div class="pets-card">
-                                <img src="../../assets/images/pets-katrine.png" alt="Cat Katrine">
-                                <p class="pets-card-title">Katrine</p>
-                                <button type="button" class="pets-card-button">Learn more</button>
-                            </div>
-                            <div class="pets-card">
-                                <img src="../../assets/images/pets-jennifer.png" alt="Dog Jennifer">
-                                <p class="pets-card-title">Jennifer</p>
-                                <button type="button" class="pets-card-button">Learn more</button>
-                            </div>
-                            <div class="pets-card">
-                                <img src="../../assets/images/pets-woody.png" alt="Dog Woody">
-                                <p class="pets-card-title">Woody</p>
-                                <button type="button" class="pets-card-button">Learn more</button>
-                            </div>
+                        <div class="slider-cards">
+                            <div class="pets-cards"></div>
+                            <div class="pets-cards"></div>
+                            <div class="pets-cards"></div>
                         </div>
                         <button type="button" title="Right" class="button-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="6" viewBox="0 0 14 6" fill="none">
@@ -220,6 +208,26 @@
                     <img src="../../assets/images/footer-puppy.png" alt="Puppy">
                 </div>
             </footer>
+        </div>
+    </div>
+
+    <div class="popup">
+        <div class="popup-window">
+            <button class="popup-close">✖</button>
+            <div class="popup-image">
+                <img src="../../assets/images/pets-jennifer.png" alt="">
+            </div>
+            <div class="popup-content">
+                <h3 class="popup-title">Jennifer</h3>
+                <h4 class="popup-subtitle">Dog - Labrador</h4>
+                <p class="popup-description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                <ul>
+                    <li><span class="bold">Age:</span> <span class="popup-info">2 months</span></li>
+                    <li><span class="bold">Inoculations:</span> <span class="popup-info">none</span></li>
+                    <li><span class="bold">Diseases:</span> <span class="popup-info">none</span></li>
+                    <li><span class="bold">Parasites:</span> <span class="popup-info">none</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

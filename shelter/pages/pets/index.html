@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon/favicon-16x16.png">
     <link rel="manifest" href="../../assets/icons/favicon/site.webmanifest">
+    <script src="script.js" type="module"></script>
 </head>
 <body>
     <div class="header-background">
@@ -27,11 +28,10 @@
                         <li><a class="menu-link" href="#contacts">Contacts</a></li>
                     </ul>
                 </nav>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22" fill="none">
-                    <line y1="21" x2="30" y2="21" stroke="black" stroke-width="2"/>
-                    <line y1="11" x2="30" y2="11" stroke="black" stroke-width="2"/>
-                    <line y1="1" x2="30" y2="1" stroke="black" stroke-width="2"/>
-                </svg>
+                <div class="menu-background"></div>
+                <div class="burger-icon">
+                    <span class="burger-line"></span>
+                </div>
             </header>
         </div>
     </div>
@@ -42,50 +42,10 @@
                 <section class="pets" id="pets">
                     <h3 class="pets-heading">Our friends who are&nbsp;looking for a house</h3>
                     <div class="pets-cards">
-                        <div class="pets-card">
-                            <img src="../../assets/images/pets-katrine.png" alt="Cat Katrine">
-                            <p class="pets-card-title">Katrine</p>
-                            <button type="button" class="pets-card-button">Learn more</button>
-                        </div>
-                        <div class="pets-card">
-                            <img src="../../assets/images/pets-jennifer.png" alt="Dog Jennifer">
-                            <p class="pets-card-title">Jennifer</p>
-                            <button type="button" class="pets-card-button">Learn more</button>
-                        </div>
-                        <div class="pets-card">
-                            <img src="../../assets/images/pets-woody.png" alt="Dog Woody">
-                            <p class="pets-card-title">Woody</p>
-                            <button type="button" class="pets-card-button">Learn more</button>
-                        </div>
-                        <div class="pets-card">
-                            <img src="../../assets/images/pets-sophie.png" alt="Dog Sophie">
-                            <p class="pets-card-title">Sophia</p>
-                            <button type="button" class="pets-card-button">Learn more</button>
-                        </div>
-                        <div class="pets-card">
-                            <img src="../../assets/images/pets-timmy.png" alt="Cat Timmy">
-                            <p class="pets-card-title">Timmy</p>
-                            <button type="button" class="pets-card-button">Learn more</button>
-                        </div>
-                        <div class="pets-card">
-                            <img src="../../assets/images/pets-charly.png" alt="Dog Charly">
-                            <p class="pets-card-title">Charly</p>
-                            <button type="button" class="pets-card-button">Learn more</button>
-                        </div>
-                        <div class="pets-card">
-                            <img src="../../assets/images/pets-scarlet.png" alt="Dog Scarlet">
-                            <p class="pets-card-title">Scarlett</p>
-                            <button type="button" class="pets-card-button">Learn more</button>
-                        </div>
-                        <div class="pets-card">
-                            <img src="../../assets/images/pets-freddie.png" alt="Cat Freddie">
-                            <p class="pets-card-title">Freddie</p>
-                            <button type="button" class="pets-card-button">Learn more</button>
-                        </div>
                     </div>
                     <div class="pets-navigation">
-                        <button type="button" class="button-arrow button-inactive">&lt;&lt;</button>
-                        <button type="button" class="button-arrow button-inactive">&lt;</button>
+                        <button type="button" class="button-arrow button-normal">&lt;&lt;</button>
+                        <button type="button" class="button-arrow button-normal">&lt;</button>
                         <button type="button" class="button-arrow button-active">1</button>
                         <button type="button" class="button-arrow button-normal">&gt;</button>
                         <button type="button" class="button-arrow button-normal">&gt;&gt;</button>
@@ -146,6 +106,26 @@
                     <img src="../../assets/images/footer-puppy.png" alt="Puppy">
                 </div>
             </footer>
+        </div>
+    </div>
+
+    <div class="popup">
+        <div class="popup-window">
+            <button class="popup-close">✖</button>
+            <div class="popup-image">
+                <img src="../../assets/images/pets-jennifer.png" alt="">
+            </div>
+            <div class="popup-content">
+                <h3 class="popup-title">Jennifer</h3>
+                <h4 class="popup-subtitle">Dog - Labrador</h4>
+                <p class="popup-description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+                <ul>
+                    <li><span class="bold">Age:</span> <span class="popup-info">2 months</span></li>
+                    <li><span class="bold">Inoculations:</span> <span class="popup-info">none</span></li>
+                    <li><span class="bold">Diseases:</span> <span class="popup-info">none</span></li>
+                    <li><span class="bold">Parasites:</span> <span class="popup-info">none</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

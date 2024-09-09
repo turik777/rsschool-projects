@@ -94,7 +94,6 @@ arrayNextRandom.forEach(pet => {
     renderCard(pets[pet], 0);
 });
 
-randomNextArr();
 arrayNextRandom.forEach(pet => {
     renderCard(pets[pet], 2);
 });

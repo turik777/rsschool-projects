@@ -90,6 +90,7 @@ arrayCurrRandom.forEach(pet => {
 });
 
 randomNextArr();
+let arrayPrevRandom = arrayNextRandom;
 arrayNextRandom.forEach(pet => {
     renderCard(pets[pet], 0);
 });
@@ -182,7 +183,7 @@ buttons[0].addEventListener("click", () => {
 
     if (countL === 3) {
         countL = 2;
-        arrayCurrRandom = arrayNextRandom;
+        arrayCurrRandom = arrayPrevRandom;
         randomNextArr();
         cards[0].innerHTML = "";
 

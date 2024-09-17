@@ -8,6 +8,25 @@
     <script src="script.js"></script>
 </head>
 <body>
-    
+    <div class="player">
+        <div class="player-song">
+            <audio src="assets/audio/ecstasy.mp3"></audio>
+            <h2 class="song-title">Ecstasy</h2>
+            <p class="song-artist">New Order</p>
+            <div class="song-cover"></div>
+        </div>
+        <div class="player-progress">
+            <input class="progress-bar" type="range"  min="0" max="100" value="0">
+            <div class="progress-time">
+                <span class="time-current">0:00</span>
+                <span class="time-total">0:00</span>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button class="backward" type="button"></button>          
+            <button class="play" type="button"></button>          
+            <button class="forward" type="button"></button>          
+        </div>
+    </div>
 </body>
 </html>

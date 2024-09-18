@@ -20,6 +20,7 @@ play.addEventListener("click", () => {
 const title = document.querySelector(".song-title");
 const artist = document.querySelector(".song-artist");
 const cover = document.querySelector(".song-cover");
+const pulse = document.querySelector(".pulse");
 
 let trackCount = Math.floor(Math.random() * tracks.length);
 function renderTrack() {
@@ -27,6 +28,8 @@ function renderTrack() {
     title.textContent = `${tracks[trackCount].title}`;
     artist.textContent = `${tracks[trackCount].artist}`;
     cover.style.background = `url(assets/img/${tracks[trackCount].cover}.png) center / cover`;
+    pulse.style.background = cover.style.background;
+    document.body.style.background = `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(assets/img/${tracks[trackCount].cover}.png) center / 260px`;
 }
 renderTrack();
 
@@ -134,4 +137,20 @@ progressBar.addEventListener("mouseup", () => {
     } else {
         audio[0].pause();
     }
+});
+
+const player = document.querySelector(".player");
+
+pulse.addEventListener("click", () => {
+  pulse.style.display = "none";
+  player.style.display = "flex";
+  setTimeout(() => player.classList.toggle("active"), 10);
+});
+
+document.body.addEventListener("click", (event) => {
+  if (event.target === document.body) {
+      player.classList.remove("active");
+      pulse.style.display = "block";
+      setTimeout(() => player.style.display = "none", 500);
+  }
 });

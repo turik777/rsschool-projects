@@ -45,6 +45,10 @@ function previousTrack() {
     } else {
         audio[0].pause();
     }
+
+    timeValue = 0;
+    maxTimeValue = Math.floor(audio[0].duration);
+    progressBar.value = timeValue;
 }
 backward.addEventListener("click", previousTrack);
 
@@ -60,5 +64,74 @@ function nextTrack() {
     } else {
         audio[0].pause();
     }
+
+    timeValue = 0;
+    maxTimeValue = Math.floor(audio[0].duration);
+    progressBar.value = timeValue;
 }
 forward.addEventListener("click", nextTrack);
+
+const timeCurrent = document.querySelector(".time-current");
+const timeTotal = document.querySelector(".time-total");
+const progressBar = document.querySelector(".progress-bar");
+
+let maxTimeValue = 0;
+let timeValue = 0;
+let minutesMax = 0;
+let secondsMax = 0;
+
+audio[0].addEventListener("loadeddata", () => {
+    maxTimeValue = Math.floor(audio[0].duration);   
+    minutesMax = Math.floor(maxTimeValue / 60);
+    secondsMax = maxTimeValue % 60;
+
+    if (secondsMax < 10) {
+        timeTotal.textContent = `${minutesMax}:0${(secondsMax)}`;
+    } else {
+        timeTotal.textContent = `${minutesMax}:${(secondsMax)}`;
+    }
+
+    progressBar.max = `${maxTimeValue}`;
+});
+audio[0].addEventListener("timeupdate", () => {
+    timeValue = Math.floor(audio[0].currentTime);
+    let minutes = Math.floor(audio[0].currentTime / 60);
+    let seconds = timeValue % 60;
+
+    if (seconds < 10) {
+        timeCurrent.textContent = `${minutes}:0${seconds}`;
+    } else {
+        timeCurrent.textContent = `${minutes}:${seconds}`;
+    }
+    if (seconds > secondsMax && minutes >= minutesMax) timeCurrent.textContent = timeTotal.textContent;
+    
+    progressBar.value = timeValue;
+
+    if (audio[0].ended) {
+        nextTrack();
+    }
+});
+
+progressBar.addEventListener("mousedown", () => {
+    audio[0].pause();
+})
+progressBar.addEventListener("input", (event) => {
+    audio[0].currentTime = event.target.value;
+    timeValue = Math.floor(audio[0].currentTime);
+    let minutes = Math.floor(audio[0].currentTime / 60);
+    let seconds = timeValue % 60;
+    
+    if (seconds < 10 ) {
+        timeCurrent.textContent = `${minutes}:0${seconds}`;
+    } else {
+        timeCurrent.textContent = `${minutes}:${seconds}`;
+    }
+    if (seconds > secondsMax && minutes >= minutesMax) timeCurrent.textContent = timeTotal.textContent;
+});
+progressBar.addEventListener("mouseup", () => {
+    if (play.classList.contains("pause")) {
+        audio[0].play();
+    } else {
+        audio[0].pause();
+    }
+});

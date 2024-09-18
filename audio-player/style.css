@@ -14,15 +14,22 @@ body {
 }
 
 .player {
-    background-color: #ffffff;
+    background-color: hsla(0, 0%, 100%, 0.5);
     width: 320px;
     height: 600px;
     padding: 65px 30px 50px;
     border-radius: 10px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.active {
+    background-color: hsla(0, 0%, 100%, 1);
+    opacity: 1;
 }
 
 .player-song {

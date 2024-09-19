@@ -36,11 +36,12 @@ renderTrack();
 const backward = document.querySelector(".backward");
 const forward = document.querySelector(".forward");
 
-function previousTrack() {
-    trackCount--;
-    if (trackCount < 0) {
-        trackCount = tracks.length - 1;
-    }
+function changeTrack(direction) {
+    if (direction === backward) trackCount--;
+    if (direction === forward) trackCount++;
+    if (trackCount < 0) trackCount = tracks.length - 1;
+    if (trackCount >= tracks.length) trackCount = 0;
+
     renderTrack();
 
     if (play.classList.contains("pause")) {
@@ -53,26 +54,8 @@ function previousTrack() {
     maxTimeValue = Math.floor(audio[0].duration);
     progressBar.value = timeValue;
 }
-backward.addEventListener("click", previousTrack);
-
-function nextTrack() {
-    trackCount++;
-    if (trackCount >= tracks.length) {
-        trackCount = 0;
-    }
-    renderTrack();
-
-    if (play.classList.contains("pause")) {
-        audio[0].play();
-    } else {
-        audio[0].pause();
-    }
-
-    timeValue = 0;
-    maxTimeValue = Math.floor(audio[0].duration);
-    progressBar.value = timeValue;
-}
-forward.addEventListener("click", nextTrack);
+backward.addEventListener("click", (event) => changeTrack(event.target));
+forward.addEventListener("click", (event) => changeTrack(event.target));
 
 const timeCurrent = document.querySelector(".time-current");
 const timeTotal = document.querySelector(".time-total");
@@ -111,7 +94,7 @@ audio[0].addEventListener("timeupdate", () => {
     progressBar.value = timeValue;
 
     if (audio[0].ended) {
-        nextTrack();
+        changeTrack(forward);
     }
 });
 

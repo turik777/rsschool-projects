@@ -68,6 +68,39 @@ body {
     margin-top: 20px;
 }
 
+.progress-bar {
+    appearance: none;
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-runnable-track {
+    background-color: #000000;
+    border-radius: 5px;
+    border: 3px solid #ffffff;
+    height: 10px;
+    opacity: 0.3;
+    transition: 0.2s;
+}
+
+.progress-bar::-webkit-slider-runnable-track:hover {
+    opacity: 0.2;
+}
+
+.progress-bar::-webkit-slider-runnable-track:active {
+    opacity: 0.4;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -6px;
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    height: 17px;
+    width: 8px;
+    opacity: 1;
+}
+
 .progress-time {
     font-size: 0.8em;
     padding: 0 2px;

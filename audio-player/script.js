@@ -66,6 +66,21 @@ let timeValue = 0;
 let minutesMax = 0;
 let secondsMax = 0;
 
+function convertCurrentTime() {
+    timeValue = Math.floor(audio[0].currentTime);
+    let minutes = Math.floor(audio[0].currentTime / 60);
+    let seconds = timeValue % 60;
+
+    if (seconds < 10) {
+        timeCurrent.textContent = `${minutes}:0${seconds}`;
+    } else {
+        timeCurrent.textContent = `${minutes}:${seconds}`;
+    }
+    if (seconds > secondsMax && minutes >= minutesMax) timeCurrent.textContent = timeTotal.textContent;
+    
+    progressBar.value = timeValue;
+}
+
 audio[0].addEventListener("loadeddata", () => {
     maxTimeValue = Math.floor(audio[0].duration);   
     minutesMax = Math.floor(maxTimeValue / 60);
@@ -80,22 +95,8 @@ audio[0].addEventListener("loadeddata", () => {
     progressBar.max = `${maxTimeValue}`;
 });
 audio[0].addEventListener("timeupdate", () => {
-    timeValue = Math.floor(audio[0].currentTime);
-    let minutes = Math.floor(audio[0].currentTime / 60);
-    let seconds = timeValue % 60;
-
-    if (seconds < 10) {
-        timeCurrent.textContent = `${minutes}:0${seconds}`;
-    } else {
-        timeCurrent.textContent = `${minutes}:${seconds}`;
-    }
-    if (seconds > secondsMax && minutes >= minutesMax) timeCurrent.textContent = timeTotal.textContent;
-    
-    progressBar.value = timeValue;
-
-    if (audio[0].ended) {
-        changeTrack(forward);
-    }
+    convertCurrentTime();
+    if (audio[0].ended) changeTrack(forward);
 });
 
 progressBar.addEventListener("mousedown", () => {
@@ -103,16 +104,7 @@ progressBar.addEventListener("mousedown", () => {
 })
 progressBar.addEventListener("input", (event) => {
     audio[0].currentTime = event.target.value;
-    timeValue = Math.floor(audio[0].currentTime);
-    let minutes = Math.floor(audio[0].currentTime / 60);
-    let seconds = timeValue % 60;
-    
-    if (seconds < 10 ) {
-        timeCurrent.textContent = `${minutes}:0${seconds}`;
-    } else {
-        timeCurrent.textContent = `${minutes}:${seconds}`;
-    }
-    if (seconds > secondsMax && minutes >= minutesMax) timeCurrent.textContent = timeTotal.textContent;
+    convertCurrentTime();
 });
 progressBar.addEventListener("mouseup", () => {
     if (play.classList.contains("pause")) {

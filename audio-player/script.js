@@ -38,10 +38,18 @@ renderTrack();
 
 const backward = document.querySelector(".backward");
 const forward = document.querySelector(".forward");
+const loop = document.querySelector(".loop");
+const shuffle = document.querySelector(".shuffle");
 
 function changeTrack(direction) {
     if (direction === backward) trackCount--;
-    if (direction === forward) trackCount++;
+    if (direction === forward) {
+        if (shuffle.classList.contains("button-active")) {
+            randomTrack(trackCount);
+            trackCount--;
+        }
+        trackCount++;        
+    }
     if (trackCount < 0) trackCount = tracks.length - 1;
     if (trackCount >= tracks.length) trackCount = 0;
 
@@ -54,6 +62,20 @@ function changeTrack(direction) {
 }
 backward.addEventListener("click", (event) => changeTrack(event.target));
 forward.addEventListener("click", (event) => changeTrack(event.target));
+
+loop.addEventListener("click", () => {
+    audio[0].loop = !audio[0].loop;
+    loop.classList.toggle("button-active");
+});
+
+shuffle.addEventListener("click", () => {
+    shuffle.classList.toggle("button-active");
+});
+
+function randomTrack(currentTrack) {
+    trackCount = Math.floor(Math.random() * tracks.length);
+    while (trackCount === currentTrack) trackCount = Math.floor(Math.random() * tracks.length);
+}
 
 const timeCurrent = document.querySelector(".time-current");
 const timeTotal = document.querySelector(".time-total");
@@ -111,15 +133,15 @@ progressBar.addEventListener("mouseup", () => {
 const player = document.querySelector(".player");
 
 pulse.addEventListener("click", () => {
-  pulse.style.display = "none";
-  player.style.display = "flex";
-  setTimeout(() => player.classList.toggle("active"), 10);
+    pulse.style.display = "none";
+    player.style.display = "flex";
+    setTimeout(() => player.classList.toggle("active"), 10);
 });
 
 document.body.addEventListener("click", (event) => {
-  if (event.target === document.body) {
-      player.classList.remove("active");
-      pulse.style.display = "block";
-      setTimeout(() => player.style.display = "none", 500);
-  }
+    if (event.target === document.body) {
+        player.classList.remove("active");
+        pulse.style.display = "block";
+        setTimeout(() => player.style.display = "none", 500);
+    }
 });

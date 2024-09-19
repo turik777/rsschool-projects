@@ -7,14 +7,17 @@ const tracks = [
 const audio = document.getElementsByTagName("audio");
 const play = document.querySelector(".play");
 
-play.addEventListener("click", () => {
-    play.classList.toggle("pause");
-
+function pauseCheck() {
     if (play.classList.contains("pause")) {
         audio[0].play();
     } else {
         audio[0].pause();
     }
+}
+
+play.addEventListener("click", () => {
+    play.classList.toggle("pause");
+    pauseCheck();
 });
 
 const title = document.querySelector(".song-title");
@@ -43,12 +46,7 @@ function changeTrack(direction) {
     if (trackCount >= tracks.length) trackCount = 0;
 
     renderTrack();
-
-    if (play.classList.contains("pause")) {
-        audio[0].play();
-    } else {
-        audio[0].pause();
-    }
+    pauseCheck();
 
     timeValue = 0;
     maxTimeValue = Math.floor(audio[0].duration);
@@ -107,11 +105,7 @@ progressBar.addEventListener("input", (event) => {
     convertCurrentTime();
 });
 progressBar.addEventListener("mouseup", () => {
-    if (play.classList.contains("pause")) {
-        audio[0].play();
-    } else {
-        audio[0].pause();
-    }
+    pauseCheck();
 });
 
 const player = document.querySelector(".player");

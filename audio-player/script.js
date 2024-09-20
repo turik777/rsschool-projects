@@ -1,7 +1,36 @@
 const tracks = [
+    {title: "Roundabout", artist: "Yes", cover: "fragile"},
+    {title: "The Chain", artist: "Fleetwood Mac", cover: "rumours"},
+    {title: "La Femme Chinoise", artist: "Yellow Magic Orchestra", cover: "yellow-magic-orchestra"},
     { title: "Ecstasy", artist: "New Order", cover: "power-corruption-and-lies"},
-    { title: "Bad Reputation", artist: "The Radio Dept.", cover: "annie-laurie"},
-    { title: "Black Ballerina", artist: "Ariel Pink", cover: "pom-pom"}
+    {title: "Plastic Love", artist: "Mariya Takeuchi", cover: "variety"},
+    { title: "Secret", artist: "Orchestral Manoeuvres in the Dark", cover: "crash"},
+    { title: "There Is a Light That Never Goes Out", artist: "The Smiths", cover: "the-queen-is-dead"},
+    {title: "Only Love Can Break Your Heart", artist: "Saint Etienne", cover: "foxbase-alpha"},
+    { title: "Fade Into You", artist: "Mazzy Star", cover: "so-tonight-that-i-might-see"},
+    {title: "Yellow Hyper Balls", artist: "Merzbow", cover: "pulse-demon"},
+    {title: "Heal", artist: "Pentagon", cover: "ico"},
+    {title: "Theme of Laura", artist: "Akira Yamaoka", cover: "silent-hill-2"},
+    {title: "Bad Reputation", artist: "The Radio Dept.", cover: "annie-laurie"},
+    {title: "Obstacles", artist: "Syd Matters", cover: "someday-we-will-foresee-obstacles"},
+    {title: "Get Innocuous!", artist: "LCD Soundsystem", cover: "sound-of-silver"},
+    {title: "Souls of Mist", artist: "Shunsuke Kida", cover: "demons-souls"},
+    {title: "Song of the Ancients", artist: "Kuniyuki Takahashi", cover: "nier-replicant"},
+    {title: "Just a Habit", artist: "Low Roar", cover: "low-roar"},
+    {title: "Crystals", artist: "M.O.O.N.", cover: "moon"},
+    {title: "Aria Math", artist: "C418", cover: "minecraft"},
+    {title: "Fleeting", artist: "Gustavo Santaolalla", cover: "the-last-of-us"},
+    {title: "Black Ballerina", artist: "Ariel Pink", cover: "pom-pom"},
+    {title: "Can't Leave the Night", artist: "BADBADNOTGOOD", cover: "iii"},
+    {title: "Pain", artist: "Boy Harsher", cover: "lesser-man"},
+    {title: "The Less I Know The Better", artist: "Tame Impala", cover: "currents"},
+    {title: "Layer Cake", artist: "Shoji Meguro", cover: "persona-5"},
+    {title: "Promises of Fertility", artist: "Huerco S.", cover: "for-those-of-you-who-have-never-and-also-those-who-have"},
+    {title: "fullmoon", artist: "Ryuichi Sakamoto", cover: "async"},
+    {title: "K.", artist: "Cigarettes After Sex", cover: "cigarettes-after-sex"},
+    {title: "TSLAMP", artist: "MGMT", cover: "little-dark-age"},
+    {title: "Once, There Was an Explosion", artist: "Ludvig Forssell", cover: "death-stranding"},
+    {title: "EARFQUAKE", artist: "Tyler, the Creator", cover: "igor"}
 ];
 
 const audio = document.getElementsByTagName("audio");

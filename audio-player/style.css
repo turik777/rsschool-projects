@@ -34,6 +34,11 @@ body {
     opacity: 1;
 }
 
+.song-name {
+    height: 48px;
+    text-wrap: balance;
+}
+
 .player-song {
     width: 100%;
 }

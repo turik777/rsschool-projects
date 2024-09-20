@@ -55,6 +55,24 @@ const cover = document.querySelector(".song-cover");
 const pulse = document.querySelector(".pulse");
 
 let trackCount = Math.floor(Math.random() * tracks.length);
+while (tracks[trackCount].artist === "Merzbow") {
+    trackCount = Math.floor(Math.random() * tracks.length);
+}
+let isConfirm = false;
+
+function warningMessage(direction) {
+    if (tracks[trackCount].artist === "Merzbow") {
+        if (!isConfirm) {
+            if (confirm("ATTENTION!\n\nThe next song might cause severe mental damage.\nDo you want to continue?\n\nPress OK to listen to the song.\nPress Cancel to skip the song.")) {
+                alert("You've been warned.");
+                isConfirm = true;
+            } else {
+                changeTrack(direction);
+            };
+        }
+    }
+}
+
 function renderTrack() {
     audio[0].src = `assets/audio/${tracks[trackCount].title.toLowerCase().split(" ").join("-")}.mp3`;
     title.textContent = `${tracks[trackCount].title}`;
@@ -82,6 +100,7 @@ function changeTrack(direction) {
     if (trackCount < 0) trackCount = tracks.length - 1;
     if (trackCount >= tracks.length) trackCount = 0;
 
+    warningMessage(direction);
     renderTrack();
     pauseCheck();
 

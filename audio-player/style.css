@@ -29,11 +29,6 @@ body {
     opacity: 0;
 }
 
-.active {
-    background-color: hsla(0, 0%, 100%, 1);
-    opacity: 1;
-}
-
 .song-name {
     height: 48px;
     text-wrap: balance;
@@ -186,6 +181,45 @@ button:hover {
     opacity: 0.7;
 }
 
+.footer {
+    width: 320px;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    background-color: transparent;
+    border-radius: 10px 10px 0 0;
+    padding: 30px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+footer:hover {
+    background-color: #ffffff;
+}
+
+footer p {
+    opacity: 0.7;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+a img:hover {
+    opacity: 1;
+}
+
 .pulse {
     position: absolute;
     width: 260px;
@@ -199,6 +233,11 @@ button:hover {
 
 .pulse:hover {
     cursor: pointer;
+}
+
+.active {
+    background-color: hsla(0, 0%, 100%, 1);
+    opacity: 1;
 }
 
 @keyframes pulse {

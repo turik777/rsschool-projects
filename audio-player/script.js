@@ -160,17 +160,22 @@ progressBar.addEventListener("mouseup", () => {
 });
 
 const player = document.querySelector(".player");
+const footer = document.querySelector(".footer");
 
 pulse.addEventListener("click", () => {
     pulse.style.display = "none";
     player.style.display = "flex";
+    footer.style.display = "flex";
     setTimeout(() => player.classList.toggle("active"), 10);
+    setTimeout(() => footer.classList.toggle("active"), 10);
 });
 
 document.body.addEventListener("click", (event) => {
     if (event.target === document.body) {
         player.classList.remove("active");
+        footer.classList.remove("active");
         pulse.style.display = "block";
         setTimeout(() => player.style.display = "none", 500);
+        setTimeout(() => footer.style.display = "none", 500);
     }
 });

@@ -33,6 +33,14 @@ const tracks = [
     {title: "EARFQUAKE", artist: "Tyler, the Creator", cover: "igor"}
 ];
 
+function preloadCover() {
+    tracks.forEach(track => {
+        let img = new Image();
+        img.src = `assets/img/${track.cover}.png`;
+    });
+}
+preloadCover();
+
 const audio = document.getElementsByTagName("audio");
 const play = document.querySelector(".play");
 

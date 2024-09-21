@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(assets/img/power-corruption-and-lies.png) center / 260px;
+}
+
+.player {
+    background-color: hsla(0, 0%, 100%, 0.5);
+    width: 320px;
+    height: 600px;
+    padding: 65px 30px 50px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    opacity: 0;
+    box-shadow: 20px 20px 5px 0px rgba(0, 0, 0, 0.7);
+}
+
+.song-name {
+    height: 48px;
+    text-wrap: balance;
+}
+
+.player-song {
+    width: 100%;
+}
+
+.song-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-top: 57px;
+    background: url(assets/img/power-corruption-and-lies.png) center / cover;
+    border-radius: 10px;
+    filter: drop-shadow(1px 2px 4px rgb(0, 0, 0));
+    opacity: 0.9;
+}
+
+.song-title,
+.song-artist {
+    text-align: center;
+}
+
+.song-title {
+    opacity: 0.7;
+}
+
+.song-artist {
+    opacity: 0.5;
+}
+
+.player-progress {
+    width: 100%;
+}
+
+.progress-bar {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    appearance: none;
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-runnable-track {
+    background-color: #000000;
+    border-radius: 5px;
+    height: 5px;
+    opacity: 0.3;
+    transition: 0.2s;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -8px;
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    height: 21px;
+    width: 9px;
+    opacity: 1;
+}
+
+.progress-time {
+    font-size: 0.8em;
+    padding: 3px 0 0;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.3;
+}
+
+.player-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.2s;
+    opacity: 0.7;
+}
+
+.backward {
+    width: 25px;
+    height: 25px;
+    background: url(assets/svg/backward.png) center / cover;
+    border: none;
+}
+
+.play {
+    width: 40px;
+    height: 40px;
+    background: url(assets/svg/play.png) center / cover;
+    border: none;
+}
+
+.pause {
+    width: 40px;
+    height: 40px;
+    background: url(assets/svg/pause.png) center / cover;
+    border: none;
+}
+
+.forward {
+    width: 25px;
+    height: 25px;
+    background: url(assets/svg/forward.png) center / cover;
+    border: none;
+}
+
+.loop {
+    width: 20px;
+    height: 20px;
+    background: url(assets/svg/loop.png) center / cover;
+    border: none;
+    opacity: 0.3;
+}
+
+.shuffle {
+    width: 20px;
+    height: 20px;
+    background: url(assets/svg/shuffle.png) center / cover;
+    border: none;
+    opacity: 0.3;
+}
+
+.button-active {
+    opacity: 0.7;
+}
+
+.footer {
+    width: 320px;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    background-color: transparent;
+    border-radius: 10px 10px 0 0;
+    padding: 30px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+    box-shadow: 20px 20px 5px 0px rgba(0, 0, 0, 0.7);
+}
+
+footer p {
+    opacity: 0.7;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+a img:hover {
+    opacity: 1;
+}
+
+.pulse {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    background: url(assets/img/power-corruption-and-lies.png) center / cover;
+    opacity: 0;
+    animation: pulse linear 1.07s infinite;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.active {
+    background-color: hsla(0, 0%, 100%, 1);
+    opacity: 1;
+}
+
+@media (hover: hover) {
+    .progress-bar::-webkit-slider-runnable-track:hover {
+        opacity: 0.2;
+    }
+
+    .progress-bar::-webkit-slider-runnable-track:active {
+        opacity: 0.4;
+    }
+
+    button:hover {
+        opacity: 0.5;
+    }
+
+    .loop:hover,
+    .shuffle:hover {
+        opacity: 0.5;
+    }
+    
+    footer:hover {
+        background-color: #ffffff;
+    }
+
+    a img:hover {
+        opacity: 1;
+    }
+
+    .pulse:hover {
+        cursor: pointer;
+    }
+}
+
+@keyframes pulse {
+    49% {
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}

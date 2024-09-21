@@ -168,6 +168,11 @@ audio[0].addEventListener("timeupdate", () => {
 });
 
 progressBar.addEventListener("mousedown", () => {
+    window.getSelection().removeAllRanges();
+    audio[0].pause();
+})
+progressBar.addEventListener("touchstart", () => {
+    window.getSelection().removeAllRanges();
     audio[0].pause();
 })
 progressBar.addEventListener("input", (event) => {
@@ -175,6 +180,9 @@ progressBar.addEventListener("input", (event) => {
     convertCurrentTime();
 });
 progressBar.addEventListener("mouseup", () => {
+    pauseCheck();
+});
+progressBar.addEventListener("touchend", () => {
     pauseCheck();
 });
 

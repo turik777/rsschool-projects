@@ -83,14 +83,6 @@ body {
     transition: 0.2s;
 }
 
-.progress-bar::-webkit-slider-runnable-track:hover {
-    opacity: 0.2;
-}
-
-.progress-bar::-webkit-slider-runnable-track:active {
-    opacity: 0.4;
-}
-
 .progress-bar::-webkit-slider-thumb {
     appearance: none;
     margin-top: -6px;
@@ -121,10 +113,6 @@ button {
     cursor: pointer;
     transition: 0.2s;
     opacity: 0.7;
-}
-
-button:hover {
-    opacity: 0.5;
 }
 
 .backward {
@@ -171,11 +159,6 @@ button:hover {
     opacity: 0.3;
 }
 
-.loop:hover,
-.shuffle:hover {
-    opacity: 0.5;
-}
-
 .button-active {
     opacity: 0.7;
 }
@@ -193,10 +176,6 @@ button:hover {
     align-items: center;
     opacity: 0;
     transition: 0.5s;
-}
-
-footer:hover {
-    background-color: #ffffff;
 }
 
 footer p {
@@ -230,13 +209,40 @@ a img:hover {
     z-index: 1;
 }
 
-.pulse:hover {
-    cursor: pointer;
-}
-
 .active {
     background-color: hsla(0, 0%, 100%, 1);
     opacity: 1;
+}
+
+@media (hover: hover) {
+    .progress-bar::-webkit-slider-runnable-track:hover {
+        opacity: 0.2;
+    }
+
+    .progress-bar::-webkit-slider-runnable-track:active {
+        opacity: 0.4;
+    }
+
+    button:hover {
+        opacity: 0.5;
+    }
+
+    .loop:hover,
+    .shuffle:hover {
+        opacity: 0.5;
+    }
+    
+    footer:hover {
+        background-color: #ffffff;
+    }
+
+    a img:hover {
+        opacity: 1;
+    }
+
+    .pulse:hover {
+        cursor: pointer;
+    }
 }
 
 @keyframes pulse {

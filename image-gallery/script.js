@@ -1,5 +1,3 @@
-const url = "https://api.unsplash.com/search/photos?query=snow&per_page=30&client_id=ThYeM-_FbWyhJU9sDl9Xw5_KxxCkgdHVCy7KITRyzvA";
-
 async function getData(url) {
     const res = await fetch(url);
     const data = await res.json();
@@ -10,8 +8,6 @@ async function getData(url) {
     
     data.results.map(data => renderImage(data));
 }
-
-getData(url);
 
 const imageGrid = document.querySelector(".image-grid");
 function renderImage(data) {
@@ -52,3 +48,5 @@ function searchImage(search) {
     imageGrid.innerHTML = "";
     getData(url);
 }
+
+searchImage("universe");

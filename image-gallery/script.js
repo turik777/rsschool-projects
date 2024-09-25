@@ -46,3 +46,9 @@ searchButton.addEventListener("click", () => {
     const searchTerm = searchInput.value;
     searchImage(searchTerm);
 });
+
+function searchImage(search) {
+    const url = `https://api.unsplash.com/search/photos?query=${search}&per_page=30&client_id=ThYeM-_FbWyhJU9sDl9Xw5_KxxCkgdHVCy7KITRyzvA`;
+    imageGrid.innerHTML = "";
+    getData(url);
+}

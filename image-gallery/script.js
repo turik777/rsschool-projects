@@ -12,3 +12,22 @@ async function getData(url) {
 }
 
 getData(url);
+
+const imageGrid = document.querySelector(".image-grid");
+function renderImage(data) {
+    const imageContainer = document.createElement("div");
+    const imageLink = document.createElement("a");
+    const image = document.createElement("img");
+
+    imageContainer.classList.add("image-container");
+    image.classList.add("image");
+
+    imageLink.href = data.urls.raw;
+    imageLink.target = "_blank";
+    image.src = data.urls.regular;
+    image.alt = data.alt_description;
+
+    imageGrid.appendChild(imageContainer);
+    imageContainer.appendChild(imageLink);
+    imageLink.appendChild(image);
+}

@@ -31,3 +31,18 @@ function renderImage(data) {
     imageContainer.appendChild(imageLink);
     imageLink.appendChild(image);
 }
+
+const searchInput = document.querySelector(".search-input");
+const searchButton = document.querySelector(".search-button");
+
+searchInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        const searchTerm = searchInput.value;
+        searchImage(searchTerm);
+    }
+});
+
+searchButton.addEventListener("click", () => {
+    const searchTerm = searchInput.value;
+    searchImage(searchTerm);
+});

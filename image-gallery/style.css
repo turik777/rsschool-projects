@@ -64,11 +64,17 @@ footer a img {
     justify-content: center;
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
 .search-input {
     font-size: 1.1em;
     border-radius: 10px;
     border: 1px solid #000000;
     padding: 5px;
+    padding-right: 35px;
     outline: none;
 }
 
@@ -77,6 +83,7 @@ footer a img {
 }
 
 .search-input::-webkit-search-cancel-button {
+    margin-left: 10px;
     appearance: none;
     width: 10px;
     height: 10px;
@@ -89,20 +96,20 @@ footer a img {
 }
 
 .search-button {
-    font-size: 1.1em;
-    border-radius: 10px;
-    padding: 5px 15px;
-    border: 1px solid #ffffff;
-    background-color: #007bff;
-    color: #ffffff;
+    position: absolute;
+    right: 8px;
+    background-color: transparent;
+    border: none;
     outline: none;
     cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-image: url(assets/svg/search.svg);
+    background-size: contain;
 }
 
 .search-button:hover {
-    border: 1px solid #007bff;
-    background-color: #ffffff;
-    color: #007bff;
+    opacity: 0.5;
 }
 
 .image-grid { 

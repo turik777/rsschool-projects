@@ -2,9 +2,7 @@ async function getData(url) {
     const res = await fetch(url);
     const data = await res.json();
 
-    if (data.results.length === 0) {
-        imageGrid.textContent = "No images found";
-    }
+    if (data.results.length === 0) imageGrid.textContent = "No images found";
     
     data.results.map(data => renderImage(data));
 }
@@ -32,15 +30,12 @@ const searchInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
 
 searchInput.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-        const searchTerm = searchInput.value;
-        searchImage(searchTerm);
-    }
+    if (event.key === "Enter") searchImage(searchInput.value);
 });
 
 searchButton.addEventListener("click", () => {
-    const searchTerm = searchInput.value;
-    searchImage(searchTerm);
+    if (searchInput.value === "") return;
+    searchImage(searchInput.value);
 });
 
 function searchImage(search) {

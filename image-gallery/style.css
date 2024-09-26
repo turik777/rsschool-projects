@@ -58,6 +58,7 @@ footer a img {
 
 .header-content {
     position: relative;
+    flex-wrap: wrap;
 }
 
 .main-content {

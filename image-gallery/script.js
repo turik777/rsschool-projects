@@ -1,6 +1,5 @@
 async function getData(url) {
-    const res = await fetch(url);
-    const data = await res.json();
+    const data = await (await fetch(url)).json();
 
     if (data.results.length === 0) imageGrid.textContent = "No images found";
     

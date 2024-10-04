@@ -9,3 +9,20 @@ function shuffleCards() {
     }
 }
 shuffleCards();
+
+let firstCard;
+let secondCard;
+cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+    });
+    card.addEventListener("click", () => {;
+        if (card.classList.contains("flip")) return;
+
+        card.classList.add("flip");
+        if (!firstCard) {
+            firstCard = card;
+        } else {
+            secondCard = card;
+        }
+    });
+});

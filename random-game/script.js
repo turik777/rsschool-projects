@@ -2,6 +2,12 @@ const runes = ["anti-clockwise-metamorphosis", "beast", "clockwise-metamorphosis
 const marks = document.querySelectorAll(".back img");
 const cards = document.querySelectorAll(".card");
 
+const moveSound = new Audio("assets/audio/move.wav");
+const selectSound = new Audio("assets/audio/select.wav");
+const soulSound = new Audio("assets/audio/soul.wav");
+const insightSound = new Audio("assets/audio/insight.wav");
+const huntedSound = new Audio("assets/audio/hunted.wav");
+
 function shuffleCards() {
     let runesRandom = runes.sort(() => Math.random() - 0.5);
     for (let i = 0; i < 20; i++) {
@@ -14,8 +20,10 @@ let firstCard;
 let secondCard;
 cards.forEach(card => {
     card.addEventListener("mouseenter", () => {
+        moveSound.play();
     });
     card.addEventListener("click", () => {;
+        selectSound.play();
         if (card.classList.contains("flip")) return;
 
         card.classList.add("flip");
@@ -39,6 +47,13 @@ function checkMatch(first, second) {
         }, 1000);
     } else {
         matched++;
+        if (matched === 10) {
+            huntedSound.play();
+        } else if (second.children[1].children[0].src.slice(-10, -4) === "hunter") {
+            insightSound.play();
+        } else {
+            soulSound.play();
+        }
     }
 
     firstCard = undefined;

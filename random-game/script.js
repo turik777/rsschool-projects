@@ -52,7 +52,7 @@ function checkMatch(first, second) {
         } else if (second.children[1].children[0].src.slice(-10, -4) === "hunter") {
             insightSound.play();
         } else {
-            soulSound.play();
+            soulSound.cloneNode().play();
         }
     }
 

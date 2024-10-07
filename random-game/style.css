@@ -17,6 +17,26 @@ body {
     background-position: center;
 }
 
+.title {
+    height: 10%;
+    aspect-ratio: 5 / 1;
+    background-image: url(assets/img/title.png);
+    background-size: cover;
+    background-position: center;
+    filter: blur(0.05vh);
+    margin-right: 2vh;
+}
+
+.subtitle {
+    color: #ffffff;
+    font-size: 3vh;
+    letter-spacing: 0.4vh;
+    text-shadow: 0 0 3px #000000;
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 4vh;
+}
+
 .board-background {
     display: flex;
     justify-content: center;

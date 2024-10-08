@@ -1,6 +1,8 @@
 const runes = ["anti-clockwise-metamorphosis", "beast", "clockwise-metamorphosis", "communion", "deep-sea", "eye", "formless-oedon", "hunter", "lake", "moon", "anti-clockwise-metamorphosis", "beast", "clockwise-metamorphosis", "communion", "deep-sea", "eye", "formless-oedon", "hunter", "lake", "moon"];
 const marks = document.querySelectorAll(".back img");
 const cards = document.querySelectorAll(".card");
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
 
 const moveSound = new Audio("assets/audio/move.wav");
 const selectSound = new Audio("assets/audio/select.wav");
@@ -60,9 +62,7 @@ function checkMatch(first, second) {
     secondCard = undefined;
 
     if (matched === 10) {
-        setTimeout(() => {
-            alert(`You win! Your number of moves: ${moves}`);
-        }, 1000);
+        gameComplete();
         setTimeout(() => {
             cards.forEach(card => card.classList.remove("flip"));
             matched = 0;
@@ -70,4 +70,31 @@ function checkMatch(first, second) {
          }, 2000);
          setTimeout(() => shuffleCards(), 2500)
     }
+}
+
+function gameComplete() {
+    huntedSound.play();
+    left.classList.toggle("show");
+    right.classList.toggle("show");
+    setTimeout(() => {
+        left.classList.toggle("move-right");
+        right.classList.toggle("move-left"); 
+    });
+    setTimeout(() => {
+        left.classList.toggle("fade-out");
+        right.classList.toggle("fade-out");
+    }, 2000);
+    setTimeout(() => insightSound.cloneNode().play(), 3000);
+    setTimeout(() => insightSound.cloneNode().play(), 3350);
+    setTimeout(() => insightSound.cloneNode().play(), 3700);
+
+    setTimeout(() => {
+        renderScore();
+        left.classList.toggle("show");
+        right.classList.toggle("show");
+        left.classList.toggle("move-right");
+        right.classList.toggle("move-left");
+        left.classList.toggle("fade-out");
+        right.classList.toggle("fade-out");
+    }, 5000)
 }

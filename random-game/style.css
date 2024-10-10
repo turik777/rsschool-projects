@@ -220,3 +220,29 @@ ul {
 .back img {
     box-shadow: 0px 0px 0.5vh 0.25vh #000000;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 60vh;
+    height: 5vh;
+    background-image: url(assets/img/footer-background.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    padding: 3vh;
+    justify-content: space-between;
+    align-items: center;
+    color: #95948d;
+    font-size: 2vh;
+    text-shadow: 0 0 3px #000000;
+}
+
+.footer a,
+.footer p {
+    margin-top: 2vh;
+}
+
+.footer img {
+    width: 3vh;
+}

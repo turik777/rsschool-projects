@@ -3,9 +3,11 @@ const marks = document.querySelectorAll(".back img");
 const cards = document.querySelectorAll(".card");
 const left = document.querySelector(".left");
 const right = document.querySelector(".right");
+const okButton = document.querySelectorAll(".ok-button");
 
 const moveSound = new Audio("assets/audio/move.wav");
 const selectSound = new Audio("assets/audio/select.wav");
+const okSound = new Audio("assets/audio/ok.wav");
 const soulSound = new Audio("assets/audio/soul.wav");
 const insightSound = new Audio("assets/audio/insight.wav");
 const huntedSound = new Audio("assets/audio/hunted.wav");
@@ -98,3 +100,13 @@ function gameComplete() {
         right.classList.toggle("fade-out");
     }, 5000)
 }
+
+okButton.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+        moveSound.play();
+    });
+    button.addEventListener("click", (event) => {
+        okSound.play();
+        event.target.parentNode.parentNode.classList.toggle("show");
+    });
+})

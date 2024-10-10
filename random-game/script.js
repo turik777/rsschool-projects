@@ -3,6 +3,7 @@ const marks = document.querySelectorAll(".back img");
 const cards = document.querySelectorAll(".card");
 const left = document.querySelector(".left");
 const right = document.querySelector(".right");
+const message = document.querySelectorAll(".message-outer");
 const okButton = document.querySelectorAll(".ok-button");
 
 const moveSound = new Audio("assets/audio/move.wav");
@@ -42,6 +43,18 @@ cards.forEach(card => {
 
 let matched = 0;
 let moves = 0;
+
+let lastMovesLocal = [];
+let bestScore = undefined;
+if (localStorage.getItem("moves")) {
+    lastMovesLocal = localStorage.getItem("moves").split(",");
+}
+if (localStorage.getItem("best")) {
+    bestScore = localStorage.getItem("best");
+}
+const lastMoves = lastMovesLocal;
+console.log(lastMovesLocal);
+
 function checkMatch(first, second) {
     moves++;
     if (first.children[1].children[0].src !== second.children[1].children[0].src) {
@@ -68,7 +81,6 @@ function checkMatch(first, second) {
         setTimeout(() => {
             cards.forEach(card => card.classList.remove("flip"));
             matched = 0;
-            moves = 0;
          }, 2000);
          setTimeout(() => shuffleCards(), 2500)
     }
@@ -90,6 +102,12 @@ function gameComplete() {
     setTimeout(() => insightSound.cloneNode().play(), 3350);
     setTimeout(() => insightSound.cloneNode().play(), 3700);
 
+    if (lastMoves.length > 9) lastMoves.shift();
+    lastMoves.push(moves);
+    if (moves < bestScore || !bestScore) bestScore = moves;
+    localStorage.setItem("moves", lastMoves);
+    localStorage.setItem("best", bestScore);
+
     setTimeout(() => {
         renderScore();
         left.classList.toggle("show");
@@ -110,3 +128,23 @@ okButton.forEach(button => {
         event.target.parentNode.parentNode.classList.toggle("show");
     });
 })
+
+function renderScore() {
+    const message = document.querySelector(".score");
+    const score = document.querySelector(".score ul");
+    const text = document.createElement("p");
+    text.classList.add("message-text");
+    text.innerHTML = `Number of moves: ${moves}&emsp;&emsp;&emsp;Best: ${bestScore}`;
+    message.classList.toggle("show");
+    message.childNodes[1].removeChild(message.childNodes[1].firstChild);
+    message.childNodes[1].prepend(text);
+
+    console.log(message.childNodes[1]);
+    score.textContent = "";
+    lastMoves.reverse().forEach(move => {
+        const li = document.createElement("li");
+        li.textContent = `${move}`;
+        score.appendChild(li);
+    })
+    moves = 0;
+}

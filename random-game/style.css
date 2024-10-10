@@ -221,6 +221,48 @@ ul {
     box-shadow: 0px 0px 0.5vh 0.25vh #000000;
 }
 
+.points {
+    display: none;
+    position: relative;
+    font-family: 'Times New Roman', sans-serif;
+    justify-content: space-between;
+    width: 60vh;
+    height: 6vh;
+    gap: 7vh;
+    padding: 0 2vh;
+    margin-bottom: 5vh;
+    opacity: 0;
+}
+
+.souls,
+.insight {
+    color: #dadad9;
+    text-align: right;
+    line-height: 6.5vh;
+    width: 50%;
+    font-size: 3vh;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.souls {
+    background-image: url(assets/img/souls-background.png);
+}
+
+.insight {
+    background-image: url(assets/img/insight-background.png);
+}
+
+.souls-add {
+    color: #dadad9;
+    display: none;
+    font-size: 2.5vh;
+    position: absolute;
+    right: 33.4vh;
+    top: -12px;
+}
+
 .footer {
     position: fixed;
     bottom: 0;

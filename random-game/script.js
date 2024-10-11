@@ -1,4 +1,18 @@
 const runes = ["anti-clockwise-metamorphosis", "beast", "clockwise-metamorphosis", "communion", "deep-sea", "eye", "formless-oedon", "hunter", "lake", "moon", "anti-clockwise-metamorphosis", "beast", "clockwise-metamorphosis", "communion", "deep-sea", "eye", "formless-oedon", "hunter", "lake", "moon"];
+
+const runesTable = {
+    "anti-clockwise-metamorphosis": 300,
+    "beast": 100,
+    "clockwise-metamorphosis": 300,
+    "communion": 500,
+    "deep-sea": 100,
+    "eye": 500,
+    "formless-oedon": 1000,
+    "hunter": 0,
+    "lake": 100,
+    "moon": 1000
+};
+
 const marks = document.querySelectorAll(".back img");
 const cards = document.querySelectorAll(".card");
 const left = document.querySelector(".left");
@@ -53,7 +67,6 @@ if (localStorage.getItem("best")) {
     bestScore = localStorage.getItem("best");
 }
 const lastMoves = lastMovesLocal;
-console.log(lastMovesLocal);
 
 function checkMatch(first, second) {
     moves++;
@@ -64,12 +77,17 @@ function checkMatch(first, second) {
         }, 1000);
     } else {
         matched++;
+        let rune = second.children[1].children[0].src.split("/").reverse()[0].split(".")[0];
         if (matched === 10) {
             huntedSound.play();
+            addSouls(runesTable[rune]);
         } else if (second.children[1].children[0].src.slice(-10, -4) === "hunter") {
+            insightSum++;
             insightSound.play();
+            addInsight();
         } else {
             soulSound.cloneNode().play();
+            addSouls(runesTable[rune]);
         }
     }
 
@@ -87,6 +105,7 @@ function checkMatch(first, second) {
 }
 
 function gameComplete() {
+    insightSum += 3;
     huntedSound.play();
     left.classList.toggle("show");
     right.classList.toggle("show");
@@ -98,15 +117,26 @@ function gameComplete() {
         left.classList.toggle("fade-out");
         right.classList.toggle("fade-out");
     }, 2000);
-    setTimeout(() => insightSound.cloneNode().play(), 3000);
-    setTimeout(() => insightSound.cloneNode().play(), 3350);
-    setTimeout(() => insightSound.cloneNode().play(), 3700);
+    setTimeout(() => {
+        insightSound.cloneNode().play();
+        addInsight();
+    }, 3000);
+    setTimeout(() => {
+        insightSound.cloneNode().play();
+        addInsight();
+    }, 3350);
+    setTimeout(() => {
+        insightSound.cloneNode().play();
+        addInsight();
+    }, 3700);
 
     if (lastMoves.length > 9) lastMoves.shift();
     lastMoves.push(moves);
     if (moves < bestScore || !bestScore) bestScore = moves;
     localStorage.setItem("moves", lastMoves);
     localStorage.setItem("best", bestScore);
+    localStorage.setItem("souls", soulsSum);
+    localStorage.setItem("insight", insightSum);
 
     setTimeout(() => {
         renderScore();
@@ -139,7 +169,6 @@ function renderScore() {
     message.childNodes[1].removeChild(message.childNodes[1].firstChild);
     message.childNodes[1].prepend(text);
 
-    console.log(message.childNodes[1]);
     score.textContent = "";
     lastMoves.reverse().forEach(move => {
         const li = document.createElement("li");
@@ -147,4 +176,62 @@ function renderScore() {
         score.appendChild(li);
     })
     moves = 0;
+}
+
+const souls = document.querySelector(".souls");
+const soulsAdded = document.querySelector(".souls-add");
+const insight = document.querySelector(".insight");
+
+let soulsSum = 0;
+let insightSum = 0;
+if (localStorage.getItem("souls")) {
+    souls.innerHTML = localStorage.getItem("souls");
+    soulsSum = +localStorage.getItem("souls");
+}
+if (localStorage.getItem("insight")) {
+    insight.innerHTML = localStorage.getItem("insight");
+    insightSum = +localStorage.getItem("insight");
+}
+
+let currentAdd = 0;
+let addTimeout;
+
+function addSouls(n) {
+    if (addTimeout) clearTimeout(addTimeout);
+    let sum = soulsSum;
+    let arr = [];
+    let acc = Math.round(n / 10);
+    let acc90 = Math.round(acc / 100 * 90)
+    arr.push(acc);
+
+    while (acc < n){
+        if (acc90 === Math.round(acc90 / 100 * 90)) {
+            acc90 = Math.round(acc90 / 100 * 70);
+        } else {
+            acc90 = Math.round(acc90 / 100 * 90);
+        }
+        acc += acc90;
+        arr.push(acc);
+    }
+    
+    arr.forEach((n, i) => {
+        setTimeout(() => {
+            souls.innerHTML = `${n + sum}`;
+        }, i * 33.33);
+    });
+
+    soulsSum += n;
+    currentAdd += n;
+    soulsAdded.innerHTML = `+${currentAdd}`;
+    soulsAdded.classList.add("show");
+    addTimeout = setTimeout(() => {
+        soulsAdded.innerHTML = "";
+        soulsAdded.classList.remove("show");
+        currentAdd = 0;
+    }, 3000);
+}
+
+function addInsight() {
+    let sum = +insight.innerHTML;
+    insight.innerHTML = `${sum + 1}`;
 }

@@ -281,6 +281,7 @@ function renderScore() {
         li.textContent = `${move}`;
         score.appendChild(li);
     })
+    lastMoves.reverse();
     moves = 0;
 }
 

@@ -26,6 +26,112 @@ const okSound = new Audio("assets/audio/ok.wav");
 const soulSound = new Audio("assets/audio/soul.wav");
 const insightSound = new Audio("assets/audio/insight.wav");
 const huntedSound = new Audio("assets/audio/hunted.wav");
+const musicboxSound = new Audio("assets/audio/musicbox.wav");
+const crySound = new Audio("assets/audio/cry.wav");
+const clericSound = new Audio("assets/audio/cleric.mp3");
+const lanternMusic = new Audio("assets/audio/lantern.mp3");
+const nightmareMusic = new Audio("assets/audio/nightmare.mp3");
+const dreamMusic = new Audio("assets/audio/dream.mp3");
+
+window.addEventListener("load", () => {
+    setTimeout(() => message[0].classList.add("fade-in"), 500);
+    if (insightSum >= 20) {
+        document.querySelector(".presence").classList.add("show");
+        setTimeout(() => document.querySelector(".presence").classList.add("fade-in"), 500);
+        document.querySelector(".overlay").classList.remove("show");
+        setTimeout(() => document.querySelector(".overlay").classList.add("fade-out"), 500);
+    } else if (insightSum >= 16) {
+        document.querySelector(".amygdala").classList.add("show");
+        setTimeout(() => document.querySelector(".amygdala").classList.add("fade-in"), 500);
+        document.querySelector(".overlay").classList.remove("show");
+        setTimeout(() => document.querySelector(".overlay").classList.add("fade-out"), 500);
+    } else if (insightSum >= 12) {
+        document.querySelector(".bloodmoon").classList.add("show");
+        setTimeout(() => document.querySelector(".bloodmoon").classList.add("fade-in"), 500);
+    } else if (insightSum >= 8) {
+        document.querySelector(".old").classList.add("show");
+        setTimeout(() => document.querySelector(".old").classList.add("fade-in"), 500);
+    } else if (insightSum >= 4) {
+        document.querySelector(".cleric").classList.add("show");
+        setTimeout(() => document.querySelector(".cleric").classList.add("fade-in"), 500);
+    }
+});
+
+okButton.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (insightSum >= 20) {
+            document.querySelector(".presence").classList.add("show");
+            setTimeout(() => document.querySelector(".presence").classList.add("fade-in"), 500);
+            document.querySelector(".overlay").classList.remove("show");
+            setTimeout(() => document.querySelector(".overlay").classList.add("fade-out"), 500);
+
+            document.querySelector(".subtitle p").textContent = "Become a Great One";
+            document.querySelector(".subtitle p").style.color = "#860000"
+
+            nightmareMusic.pause();
+            dreamMusic.play();
+        } else if (insightSum >= 16) {
+            document.querySelector(".amygdala").classList.add("show");
+            setTimeout(() => document.querySelector(".amygdala").classList.add("fade-in"), 500);
+            document.querySelector(".overlay").classList.remove("show");
+            setTimeout(() => document.querySelector(".overlay").classList.add("fade-out"), 500);
+
+            document.querySelector(".subtitle p").textContent = "Fear the Old Blood";
+            document.querySelector(".subtitle p").style.color = "#860000"
+
+            left.classList.remove("green");
+            right.classList.remove("green");
+            left.textContent = "NIGHTMARE SLAIN";
+            right.textContent = "NIGHTMARE SLAIN";
+
+            lanternMusic.pause();
+            nightmareMusic.play();
+        } else if (insightSum >= 12) {
+            document.querySelector(".bloodmoon").classList.add("show");
+            setTimeout(() => document.querySelector(".bloodmoon").classList.add("fade-in"), 500);
+
+            document.querySelector(".subtitle p").textContent = "Grant Us Eyes";
+
+            left.classList.add("green");
+            right.classList.add("green");
+            left.textContent = "PREY SLAUGHTERED";
+            right.textContent = "PREY SLAUGHTERED";
+
+            crySound.pause();
+            lanternMusic.play();
+            lanternMusic.volume = 0.5;
+        } else if (insightSum >= 8) {
+            document.querySelector(".old").classList.add("show");
+            setTimeout(() => document.querySelector(".old").classList.add("fade-in"), 500);
+
+            crySound.play();
+            crySound.volume = 0.05;
+        } else if (insightSum >= 4) {
+            document.querySelector(".cleric").classList.add("show");
+            setTimeout(() => document.querySelector(".cleric").classList.add("fade-in"), 500);
+
+            clericSound.play();
+            clericSound.volume = 0.5;
+        } else {
+            musicboxSound.play();
+        }
+    });
+})
+
+okButton[0].addEventListener("click", () => {
+    document.querySelector(".overlay").classList.add("show-block");
+    document.querySelector(".title").classList.add("show-block");
+    document.querySelector(".board-background").classList.add("show");
+    document.querySelector(".points").classList.add("show");
+    document.querySelector(".footer").classList.add("show");
+    setTimeout(() => {
+        document.querySelector(".overlay").classList.add("fade-in");
+        document.querySelector(".title").classList.add("fade-in");
+        document.querySelector(".board-background").classList.add("fade-in");
+        document.querySelector(".points").classList.add("fade-in");
+        document.querySelector(".footer").classList.add("fade-in");
+    }, 500);
+})
 
 function shuffleCards() {
     let runesRandom = runes.sort(() => Math.random() - 0.5);
